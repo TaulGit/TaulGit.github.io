@@ -1,26 +1,589 @@
-<!DOCTYPE html><html lang="en" class="scroll-smooth"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="favicon2.jpg"/><link rel="stylesheet" href="/_next/static/css/92b53c90e215dddf.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-af78f5c2c11af041.js"/><script src="/_next/static/chunks/4bd1b696-70b6d399998de86a.js" async=""></script><script src="/_next/static/chunks/684-5aaa8290a129f299.js" async=""></script><script src="/_next/static/chunks/main-app-ce3fc220acd0b26a.js" async=""></script><script src="/_next/static/chunks/17-9c04c9413a9f9f1f.js" async=""></script><script src="/_next/static/chunks/874-6cc630662f3664af.js" async=""></script><script src="/_next/static/chunks/862-15038af301665bb3.js" async=""></script><script src="/_next/static/chunks/app/layout-a1de354c4f369fd5.js" async=""></script><script src="/_next/static/chunks/178-595a94b9af1e67b5.js" async=""></script><script src="/_next/static/chunks/748-b0753eeaf12cb586.js" async=""></script><script src="/_next/static/chunks/app/page-c6550b17961df064.js" async=""></script><link rel="icon" href="/favicon2.jpg" type="image/svg+xml"/><link rel="dns-prefetch" href="https://google-fonts.jialeliu.com"/><link rel="preconnect" href="https://google-fonts.jialeliu.com" crossorigin=""/><link rel="preload" as="style" href="https://google-fonts.jialeliu.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Crimson+Text:ital,wght@0,400;0,600;1,400&amp;display=swap"/><link rel="stylesheet" id="gfonts-css" href="https://google-fonts.jialeliu.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Crimson+Text:ital,wght@0,400;0,600;1,400&amp;display=swap" media="print"/><script>
-              (function(){
-                var l = document.getElementById('gfonts-css');
-                if (!l) return;
-                if (l.media !== 'all') {
-                  l.addEventListener('load', function(){ try { l.media = 'all'; } catch(e){} });
-                }
-              })();
-            </script><noscript><link rel="stylesheet" href="https://google-fonts.jialeliu.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Crimson+Text:ital,wght@0,400;0,600;1,400&amp;display=swap"/></noscript><script>
-              try {
-                const theme = localStorage.getItem('theme-storage');
-                const parsed = theme ? JSON.parse(theme) : null;
-                const setting = parsed?.state?.theme || 'system';
-                const prefersDark = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-                const effective = setting === 'dark' ? 'dark' : (setting === 'light' ? 'light' : (prefersDark ? 'dark' : 'light'));
-                var root = document.documentElement;
-                root.classList.add(effective);
-                root.setAttribute('data-theme', effective);
-              } catch (e) {
-                var root = document.documentElement;
-                root.classList.add('light');
-                root.setAttribute('data-theme', 'light');
-              }
-            </script><title>Clancy</title><meta name="description" content="柯岚馨的个人主页"/><meta name="author" content="柯岚馨"/><meta name="keywords" content="柯岚馨,PhD,Research,重庆大学"/><meta name="creator" content="柯岚馨"/><meta name="publisher" content="柯岚馨"/><meta property="og:title" content="Clancy"/><meta property="og:description" content="柯岚馨的个人主页"/><meta property="og:site_name" content="柯岚馨&#x27;s Academic Website"/><meta property="og:locale" content="en_US"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Clancy"/><meta name="twitter:description" content="柯岚馨的个人主页"/><link rel="icon" href="/favicon2.jpg"/><script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="font-sans antialiased"><div style="visibility:hidden"><nav class="fixed top-0 left-0 right-0 z-50" data-headlessui-state=""><div class="transition-all duration-300 ease-out bg-transparent" style="transform:translateY(-100px)"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16 lg:h-20"><div class="flex-shrink-0" tabindex="0"><a class="text-xl lg:text-2xl font-serif font-semibold text-primary hover:text-accent transition-colors duration-200" href="/">Clancy</a></div><div class="hidden lg:block"><div class="ml-10 flex items-center space-x-8"><div class="flex items-baseline space-x-8"><a class="relative px-3 py-2 text-sm font-medium transition-all duration-200 rounded hover:bg-accent/10 hover:shadow-sm text-primary" href="/"><span class="relative z-10">About</span><div class="absolute inset-0 bg-accent/10 rounded-lg"></div></a><a class="relative px-3 py-2 text-sm font-medium transition-all duration-200 rounded hover:bg-accent/10 hover:shadow-sm text-neutral-600 hover:text-primary" href="/publications/"><span class="relative z-10">Publications</span></a><a class="relative px-3 py-2 text-sm font-medium transition-all duration-200 rounded hover:bg-accent/10 hover:shadow-sm text-neutral-600 hover:text-primary" href="/cv/"><span class="relative z-10">CV</span></a></div><div class="flex items-center justify-center w-10 h-10 rounded-lg border border-neutral-200 dark:border-[rgba(148,163,184,0.24)] bg-background dark:bg-neutral-800"><div class="w-4 h-4 rounded-full bg-neutral-300 animate-pulse"></div></div></div></div><div class="lg:hidden flex items-center space-x-2"><div class="flex items-center justify-center w-10 h-10 rounded-lg border border-neutral-200 dark:border-[rgba(148,163,184,0.24)] bg-background dark:bg-neutral-800"><div class="w-4 h-4 rounded-full bg-neutral-300 animate-pulse"></div></div><button class="inline-flex items-center justify-center p-2 rounded-md text-neutral-600 hover:text-primary hover:bg-neutral-100 dark:hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent transition-colors duration-200" id="headlessui-disclosure-button-«R5pdb»" type="button" aria-expanded="false" data-headlessui-state=""><span class="sr-only">Open main menu</span><div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" class="block h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path></svg></div></button></div></div></div></div></nav><main class="min-h-screen pt-16 lg:pt-20"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-background min-h-screen"><div class="grid grid-cols-1 lg:grid-cols-3 gap-12"><div class="lg:col-span-1"><div class="sticky top-8" style="opacity:0;transform:translateY(20px)"><div class="w-64 h-64 mx-auto mb-6 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"><img alt="柯岚馨" width="256" height="256" decoding="async" data-nimg="1" class="w-full h-full object-cover object-[32%_center]" style="color:transparent" src="favicon2.jpg"/></div><div class="text-center mb-6"><h1 class="text-3xl font-serif font-bold text-primary mb-2">柯岚馨</h1><p class="text-lg text-accent font-medium mb-1">硕士研究生</p><p class="text-neutral-600 mb-2">重庆大学</p></div><div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-6 relative px-2"><div class="relative"><button class="p-2 sm:p-2 transition-colors duration-200 text-neutral-600 dark:text-neutral-400 hover:text-accent" aria-label="Email"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"></path></svg></button></div><div class="relative"><button class="p-2 sm:p-2 transition-colors duration-200 text-neutral-600 dark:text-neutral-400 hover:text-accent" aria-label="Location"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"></path></svg></button></div><a href="https://kns.cnki.net/kcms2/author/detail?v=NitQnVYDOcpONJ7tY4ZJonGbvsOykDgezJPa8WISoPtSSZF7Vlqr0AhGx4ur7KyjCEU0rpyzLp_Gx5FkeUaLy2PZBs6AwBkAyZrF721xBAI2WlVOSZnbZAlbKyzq0YKK&amp;uniplatform=NZKPT&amp;language=CHS" target="_blank" rel="noopener noreferrer" class="p-2 sm:p-2 text-neutral-600 dark:text-neutral-400 hover:text-accent transition-colors duration-200" aria-label="Google Scholar"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"></path></svg></a><a href="https://dl.acm.org/profile/99661386316" target="_blank" rel="noopener noreferrer" class="p-2 sm:p-2 text-neutral-600 dark:text-neutral-400 hover:text-accent transition-colors duration-200" aria-label="ORCID"><svg viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z"></path></svg></a><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-2 sm:p-2 text-neutral-600 dark:text-neutral-400 hover:text-accent transition-colors duration-200" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github h-5 w-5" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg></a><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="p-2 sm:p-2 text-neutral-600 dark:text-neutral-400 hover:text-accent transition-colors duration-200" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin h-5 w-5" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></div><div class="bg-neutral-100 dark:bg-neutral-800 rounded-lg p-4 mb-6 hover:shadow-lg transition-all duration-200 hover:scale-[1.02]"><h3 class="font-semibold text-primary mb-3">Research Interests</h3><div class="space-y-2 text-sm text-neutral-700 dark:text-neutral-500"><div>Product Manager</div><div>Data Analysis</div></div></div><div class="flex justify-center"><div class="relative"><button class="flex items-center space-x-2 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-500 hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-600 dark:hover:text-red-400 cursor-pointer" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" class="h-4 w-4"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"></path></svg><span>Like</span></button></div></div></div></div><div class="lg:col-span-2 space-y-8"><section id="about" class="scroll-mt-24 space-y-8"><section style="opacity:0;transform:translateY(20px)"><h2 class="text-2xl font-serif font-bold text-primary mb-4">About</h2><div class="text-neutral-700 dark:text-neutral-600 leading-relaxed"><p class="mb-4 last:mb-0">I am a Master student at the School of Management Science &amp; Real Estate, Chongqing University, advised by <a href="https://www.msre.cqu.edu.cn/szdw/jslb/lkj.htm" node="[object Object]" target="_blank" rel="noopener noreferrer" class="text-accent font-medium transition-all duration-200 rounded hover:bg-accent/10 hover:shadow-sm">Prof. Kaijian Li</a>.</p>
-<p class="mb-4 last:mb-0">Prior to this, I obtained a Bachelor&#x27;s degree  in Information management and information systems from Fuzhou University.</p>
-<p class="mb-4 last:mb-0">My current research focuses on Drone Vision and Path Planing.</p></div></section><section style="opacity:0;transform:translateY(20px)"><div class="flex items-center justify-between mb-4"><h2 class="text-2xl font-serif font-bold text-primary">Selected Publications</h2><a class="text-accent hover:text-accent-dark text-sm font-medium transition-all duration-200 rounded hover:bg-accent/10 hover:shadow-sm" href="/publications/">View All →</a></div><div class="space-y-4"><div class="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg shadow-sm border border-neutral-200 dark:border-[rgba(148,163,184,0.24)] hover:shadow-lg transition-all duration-200 hover:scale-[1.02]" style="opacity:0;transform:translateY(20px)"><h3 class="font-semibold text-primary mb-2 leading-tight">Hierarchical Multi-label Classification Model Research for Scenic Area Tourism Resources</h3><p class="text-sm text-neutral-600 dark:text-neutral-500 mb-1"><span><span class=" ">Lanxin Ke</span>, </span><span><span class=" ">Li Jian</span>, </span><span><span class=" ">Wang Liao</span>, </span><span><span class=" ">Yibin Chen</span>, </span><span><span class=" ">Yangqi Cai</span>, </span><span><span class=" ">Linmei Ye</span></span></p><p class="text-sm text-neutral-600 dark:text-neutral-500 mb-2">Proceedings of the 2024 International Conference on Big Data and Digital Management</p><p class="text-sm text-neutral-500 dark:text-neutral-500 line-clamp-2">Research on hierarchical multi-label classification of tourism scenic area resources: A MiLCT model integrating Graph-Convolutional Networks and attention-based Transformers for enhanced feature extraction and classification efficacy.</p></div></div></section><section style="opacity:0;transform:translateY(20px)"><h2 class="text-2xl font-serif font-bold text-primary mb-4">News</h2><div class="space-y-3"><div class="flex items-start space-x-3"><span class="text-xs text-neutral-500 mt-1 w-16 flex-shrink-0">2025-11</span><p class="text-sm text-neutral-700">Starting my Postgraduate at CQU</p></div><div class="flex items-start space-x-3"><span class="text-xs text-neutral-500 mt-1 w-16 flex-shrink-0">2025-06</span><p class="text-sm text-neutral-700">Graduate from Fuzhou University  ヾ(•ω•`)o</p></div></div></section></section></div></div></div><!--$--><!--/$--><!--$--><!--/$--></main><footer class="border-t border-neutral-200/50 bg-neutral-50/50 dark:bg-neutral-900/50 dark:border-neutral-700/50"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6"><div class="flex flex-col sm:flex-row justify-between items-center gap-2"><p class="text-xs text-neutral-500">Last updated: <!-- -->December 25, 2025</p><p class="text-xs text-neutral-500 flex items-center"><a href="https://github.com/xyjoey/PRISM" target="_blank" rel="noopener noreferrer">Built with PRISM</a><span class="ml-2">🚀</span></p></div></div></footer></div><script src="/_next/static/chunks/webpack-af78f5c2c11af041.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[3719,[\"17\",\"static/chunks/17-9c04c9413a9f9f1f.js\",\"874\",\"static/chunks/874-6cc630662f3664af.js\",\"862\",\"static/chunks/862-15038af301665bb3.js\",\"177\",\"static/chunks/app/layout-a1de354c4f369fd5.js\"],\"ThemeProvider\"]\n3:I[768,[\"17\",\"static/chunks/17-9c04c9413a9f9f1f.js\",\"874\",\"static/chunks/874-6cc630662f3664af.js\",\"862\",\"static/chunks/862-15038af301665bb3.js\",\"177\",\"static/chunks/app/layout-a1de354c4f369fd5.js\"],\"default\"]\n4:I[7555,[],\"\"]\n5:I[1295,[],\"\"]\n6:I[2548,[\"17\",\"static/chunks/17-9c04c9413a9f9f1f.js\",\"874\",\"static/chunks/874-6cc630662f3664af.js\",\"862\",\"static/chunks/862-15038af301665bb3.js\",\"177\",\"static/chunks/app/layout-a1de354c4f369fd5.js\"],\"default\"]\n7:I[7437,[\"17\",\"static/chunks/17-9c04c9413a9f9f1f.js\",\"178\",\"static/chunks/178-595a94b9af1e67b5.js\",\"874\",\"static/chunks/874-6cc630662f3664af.js\",\"748\",\"static/chunks/748-b0753eeaf12cb586.js\",\"974\",\"static/chunks/app/page-c6550b17961df064.js\"],\"default\"]\n8:I[9507,[\"17\",\"static/chunks/17-9c04c9413a9f9f1f.js\",\"178\",\"static/chunks/178-595a94b9af1e67b5.js\",\"874\",\"static/chunks/874-6cc630662f3664af.js\",\"748\",\"static/chunks/748-b0753eeaf12cb586.js\",\"974\",\"static/chunks/app/page-c6550b17961df064.js\"],\"default\"]\n9:I[5218,[\"17\",\"static/chunks/17-9c04c9413a9f9f1f.js\",\"178\",\"static/chunks/178-595a94b9af1e67b5.js\",\"874\",\"static/chunks/874-6cc630662f3664af.js\",\"748\",\"static/chunks/748-b0753eeaf12cb586.js\",\"974\",\"static/chunks/app/page-c6550b17961df064.js\"],\"default\"]\nc:I[1990,[\"17\",\"static/chunks/17-9c04c9413a9f9f1f.js\",\"178\",\"static/chunks/178-595a94b9af1e67b5.js\",\"874\",\"static/chunks/874-6cc630662f3664af.js\",\"748\",\"static/chunks/748-b0753eeaf12cb586.js\",\"974\",\"static/chunks/app/page-c6550b17961df064.js\"],\"default\"]\nd:I[9665,[],\"MetadataBoundary\"]\nf:I[9665,[],\"OutletBoundary\"]\n12:I[4911,[],\"AsyncMetadataOutlet\"]\n14:I[9665,[],\"ViewportBoundary\"]\n16:I[6614,[],\"\"]\n:HL[\"/_next/static/css/92b53c90e215dddf.css\",\"style\"]\na:Tae8,"])</script><script>self.__next_f.push([1,"Research on tourism resource demand offers critical decision support for the protection, development, and marketing of tourism resources. It also improves personalized experiences and satisfaction for tourists, thus fostering the advancement of the tourism industry into broader and higher realms. It also improves personalized experiences and satisfaction for tourists, thus fostering the advancement of the tourism industry into broader and higher realms. The objective of this study is to extract characteristics of 3A-level and above scenic spots nationwide, facilitating the integration and utilization of tourism resources in the country. The objective of this study is to extract characteristics of 3A-level and above scenic spots nationwide, facilitating the integration and utilization of tourism information. This facilitates the automation and efficiency of tourism resource classification and provides suggestions for improving services at these scenic areas. In response to the abundant resources of major scenic areas across the country, a new approach has been developed. In response to the abundant resources of major scenic areas across the country, this study introduces a hierarchical multi-label classification model for tourism resources. tourism resource classification theme system issued by the Ministry of Culture and Tourism, and leveraging FastText for pre-training on scenic area introductory texts, this research combines the advantages of the hierarchical multi-label classification model with the theme system of the Ministry of Culture and Tourism. introductory texts, this research combines the traditional LSTM model with an attention-based Transformer model. Additionally, a Graph-Convolutional Network (GCN) is used to classify tourism resources. Convolutional Network (GCN) is employed as a hierarchical structure-aware encoder to construct the MiLCT, a hierarchical multi-label classification model, enabling sophisticated multi-label classification to be applied to the text. model, enabling sophisticated multi-label classification of tourism scenic area resource data. Experimental comparisons demonstrate that, with increasing classification levels, the proposed model outperforms those lacking GCN and Transformer components in terms of micro-Precision, micro-Recision, micro-Recision, and micro-Recision. micro-Precision, micro-Recall, and micro-F1 scores, this indicates that the hierarchical structural information of the model can significantly enhance its performance. In comparison to the hierarchical multi-label correlation model, the proposed model demonstrates enhanced performance across the evaluated metrics, indicating its efficacy in integrating multimodal features and providing more comprehensive and accurate data characterization."])</script><script>self.__next_f.push([1,"b:Td8a,"])</script><script>self.__next_f.push([1,"@inproceedings{10.1145/3696500.3696562,\n  author = {Ke, Lanxin and Jian, Li and Liao, Wang and Chen, Yibin and Cai, Yangqi and Ye, Linmei},\n  title = {Hierarchical Multi-label Classification Model Research for Scenic Area Tourism Resources},\n  year = {2024},\n  isbn = {9798400710278},\n  publisher = {Association for Computing Machinery},\n  address = {New York, NY, USA},\n  url = {https://doi.org/10.1145/3696500.3696562},\n  doi = {10.1145/3696500.3696562},\n  abstract = {Research on tourism resource demand offers critical decision support for the protection, development, and marketing of tourism resources. It also improves personalized experiences and satisfaction for tourists, thus fostering the advancement of the tourism industry into broader and higher realms. It also improves personalized experiences and satisfaction for tourists, thus fostering the advancement of the tourism industry into broader and higher realms. The objective of this study is to extract characteristics of 3A-level and above scenic spots nationwide, facilitating the integration and utilization of tourism resources in the country. The objective of this study is to extract characteristics of 3A-level and above scenic spots nationwide, facilitating the integration and utilization of tourism information. This facilitates the automation and efficiency of tourism resource classification and provides suggestions for improving services at these scenic areas. In response to the abundant resources of major scenic areas across the country, a new approach has been developed. In response to the abundant resources of major scenic areas across the country, this study introduces a hierarchical multi-label classification model for tourism resources. tourism resource classification theme system issued by the Ministry of Culture and Tourism, and leveraging FastText for pre-training on scenic area introductory texts, this research combines the advantages of the hierarchical multi-label classification model with the theme system of the Ministry of Culture and Tourism. introductory texts, this research combines the traditional LSTM model with an attention-based Transformer model. Additionally, a Graph-Convolutional Network (GCN) is used to classify tourism resources. Convolutional Network (GCN) is employed as a hierarchical structure-aware encoder to construct the MiLCT, a hierarchical multi-label classification model, enabling sophisticated multi-label classification to be applied to the text. model, enabling sophisticated multi-label classification of tourism scenic area resource data. Experimental comparisons demonstrate that, with increasing classification levels, the proposed model outperforms those lacking GCN and Transformer components in terms of micro-Precision, micro-Recision, micro-Recision, and micro-Recision. micro-Precision, micro-Recall, and micro-F1 scores, this indicates that the hierarchical structural information of the model can significantly enhance its performance. In comparison to the hierarchical multi-label correlation model, the proposed model demonstrates enhanced performance across the evaluated metrics, indicating its efficacy in integrating multimodal features and providing more comprehensive and accurate data characterization.},\n  booktitle = {Proceedings of the 2024 International Conference on Big Data and Digital Management},\n  pages = {369–379},\n  numpages = {11},\n  location = {Shanghai, China},\n  series = {ICBDDM '24}\n}"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"4vPxaw1b0A3szSMl7sb-j\",\"p\":\"\",\"c\":[\"\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/92b53c90e215dddf.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"className\":\"scroll-smooth\",\"suppressHydrationWarning\":true,\"children\":[[\"$\",\"head\",null,{\"children\":[[\"$\",\"link\",null,{\"rel\":\"icon\",\"href\":\"/favicon2.jpg\",\"type\":\"image/svg+xml\"}],[\"$\",\"link\",null,{\"rel\":\"dns-prefetch\",\"href\":\"https://google-fonts.jialeliu.com\"}],[\"$\",\"link\",null,{\"rel\":\"preconnect\",\"href\":\"https://google-fonts.jialeliu.com\",\"crossOrigin\":\"\"}],[\"$\",\"link\",null,{\"rel\":\"preload\",\"as\":\"style\",\"href\":\"https://google-fonts.jialeliu.com/css2?family=Inter:wght@300;400;500;600;700\u0026family=Crimson+Text:ital,wght@0,400;0,600;1,400\u0026display=swap\"}],[\"$\",\"link\",null,{\"rel\":\"stylesheet\",\"id\":\"gfonts-css\",\"href\":\"https://google-fonts.jialeliu.com/css2?family=Inter:wght@300;400;500;600;700\u0026family=Crimson+Text:ital,wght@0,400;0,600;1,400\u0026display=swap\",\"media\":\"print\"}],[\"$\",\"script\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"\\n              (function(){\\n                var l = document.getElementById('gfonts-css');\\n                if (!l) return;\\n                if (l.media !== 'all') {\\n                  l.addEventListener('load', function(){ try { l.media = 'all'; } catch(e){} });\\n                }\\n              })();\\n            \"}}],[\"$\",\"noscript\",null,{\"children\":[\"$\",\"link\",null,{\"rel\":\"stylesheet\",\"href\":\"https://google-fonts.jialeliu.com/css2?family=Inter:wght@300;400;500;600;700\u0026family=Crimson+Text:ital,wght@0,400;0,600;1,400\u0026display=swap\"}]}],[\"$\",\"script\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"\\n              try {\\n                const theme = localStorage.getItem('theme-storage');\\n                const parsed = theme ? JSON.parse(theme) : null;\\n                const setting = parsed?.state?.theme || 'system';\\n                const prefersDark = typeof window !== 'undefined' \u0026\u0026 window.matchMedia \u0026\u0026 window.matchMedia('(prefers-color-scheme: dark)').matches;\\n                const effective = setting === 'dark' ? 'dark' : (setting === 'light' ? 'light' : (prefersDark ? 'dark' : 'light'));\\n                var root = document.documentElement;\\n                root.classList.add(effective);\\n                root.setAttribute('data-theme', effective);\\n              } catch (e) {\\n                var root = document.documentElement;\\n                root.classList.add('light');\\n                root.setAttribute('data-theme', 'light');\\n              }\\n            \"}}]]}],[\"$\",\"body\",null,{\"className\":\"font-sans antialiased\",\"children\":[\"$\",\"$L2\",null,{\"children\":[[\"$\",\"$L3\",null,{\"items\":[{\"title\":\"About\",\"type\":\"page\",\"target\":\"about\",\"href\":\"/\"},{\"title\":\"Publications\",\"type\":\"page\",\"target\":\"publications\",\"href\":\"/publications\"},{\"title\":\"CV\",\"type\":\"page\",\"target\":\"cv\",\"href\":\"/cv\"}],\"siteTitle\":\"Clancy\",\"enableOnePageMode\":false}],[\"$\",\"main\",null,{\"className\":\"min-h-screen pt-16 lg:pt-20\",\"children\":[\"$\",\"$L4\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L5\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}],[\"$\",\"$L6\",null,{\"lastUpdated\":\"December 25, 2025\"}]]}]}]]}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"div\",null,{\"className\":\"max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-background min-h-screen\",\"children\":[\"$\",\"div\",null,{\"className\":\"grid grid-cols-1 lg:grid-cols-3 gap-12\",\"children\":[[\"$\",\"div\",null,{\"className\":\"lg:col-span-1\",\"children\":[\"$\",\"$L7\",null,{\"author\":{\"name\":\"柯岚馨\",\"title\":\"硕士研究生\",\"institution\":\"重庆大学\",\"avatar\":\"favicon2.jpg\"},\"social\":{\"email\":\"2486813691@qq.com\",\"location\":\"Chongqing, China\",\"location_url\":\"https://ditu.amap.com/place/B00178X957\",\"location_details\":[\"沙坪坝区沙正街174号重庆大学B区管理科学与房地产学院\",\"中国 · 重庆\"],\"google_scholar\":\"https://kns.cnki.net/kcms2/author/detail?v=NitQnVYDOcpONJ7tY4ZJonGbvsOykDgezJPa8WISoPtSSZF7Vlqr0AhGx4ur7KyjCEU0rpyzLp_Gx5FkeUaLy2PZBs6AwBkAyZrF721xBAI2WlVOSZnbZAlbKyzq0YKK\u0026uniplatform=NZKPT\u0026language=CHS\",\"orcid\":\"https://dl.acm.org/profile/99661386316\",\"github\":\"https://github.com\",\"linkedin\":\"https://linkedin.com\"},\"features\":{\"enable_likes\":true,\"enable_one_page_mode\":false},\"researchInterests\":[\"Product Manager\",\"Data Analysis\"]}]}],[\"$\",\"div\",null,{\"className\":\"lg:col-span-2 space-y-8\",\"children\":[[\"$\",\"section\",\"about\",{\"id\":\"about\",\"className\":\"scroll-mt-24 space-y-8\",\"children\":[[[\"$\",\"$L8\",\"about\",{\"content\":\"I am a Master student at the School of Management Science \\\\\u0026 Real Estate, Chongqing University, advised by [Prof. Kaijian Li](https://www.msre.cqu.edu.cn/szdw/jslb/lkj.htm).\\n\\nPrior to this, I obtained a Bachelor's degree  in Information management and information systems from Fuzhou University.\\n\\nMy current research focuses on Drone Vision and Path Planing.\\n\\n\",\"title\":\"About\"}],[\"$\",\"$L9\",\"featured_publications\",{\"publications\":[{\"id\":\"10.1145/3696500.3696562\",\"title\":\"Hierarchical Multi-label Classification Model Research for Scenic Area Tourism Resources\",\"authors\":[{\"name\":\"Lanxin Ke\",\"isHighlighted\":false,\"isCorresponding\":false,\"isCoAuthor\":false},{\"name\":\"Li Jian\",\"isHighlighted\":false,\"isCorresponding\":false,\"isCoAuthor\":false},{\"name\":\"Wang Liao\",\"isHighlighted\":false,\"isCorresponding\":false,\"isCoAuthor\":false},{\"name\":\"Yibin Chen\",\"isHighlighted\":false,\"isCorresponding\":false,\"isCoAuthor\":false},{\"name\":\"Yangqi Cai\",\"isHighlighted\":false,\"isCorresponding\":false,\"isCoAuthor\":false},{\"name\":\"Linmei Ye\",\"isHighlighted\":false,\"isCorresponding\":false,\"isCoAuthor\":false}],\"year\":2024,\"type\":\"conference\",\"status\":\"published\",\"tags\":[],\"keywords\":\"$0:f:0:1:2:children:1:props:children:0:props:children:props:children:1:props:children:0:props:children:0:1:props:publications:0:tags\",\"researchArea\":\"machine-learning\",\"journal\":\"\",\"conference\":\"Proceedings of the 2024 International Conference on Big Data and Digital Management\",\"pages\":\"369–379\",\"doi\":\"10.1145/3696500.3696562\",\"url\":\"https://doi.org/10.1145/3696500.3696562\",\"abstract\":\"$a\",\"description\":\"Research on hierarchical multi-label classification of tourism scenic area resources: A MiLCT model integrating Graph-Convolutional Networks and attention-based Transformers for enhanced feature extraction and classification efficacy.\",\"selected\":true,\"preview\":\"网络结构1.1.jpg\",\"bibtex\":\"$b\"}],\"title\":\"Selected Publications\",\"enableOnePageMode\":false}],[\"$\",\"$Lc\",\"news\",{\"items\":[{\"date\":\"2025-11\",\"content\":\"Starting my Postgraduate at CQU\"},{\"date\":\"2025-06\",\"content\":\"Graduate from Fuzhou University  ヾ(•ω•`)o\"}],\"title\":\"News\"}]],false,false,false]}]]}]]}]}],[\"$\",\"$Ld\",null,{\"children\":\"$Le\"}],null,[\"$\",\"$Lf\",null,{\"children\":[\"$L10\",\"$L11\",[\"$\",\"$L12\",null,{\"promise\":\"$@13\"}]]}]]}],{},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"AX96yqmlYAllo225mZ4jl\",{\"children\":[[\"$\",\"$L14\",null,{\"children\":\"$L15\"}],null]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$16\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"17:\"$Sreact.suspense\"\n18:I[4911,[],\"AsyncMetadata\"]\ne:[\"$\",\"$17\",null,{\"fallback\":null,\"children\":[\"$\",\"$L18\",null,{\"promise\":\"$@19\"}]}]\n"])</script><script>self.__next_f.push([1,"11:null\n"])</script><script>self.__next_f.push([1,"15:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n10:null\n"])</script><script>self.__next_f.push([1,"19:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Clancy\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"柯岚馨的个人主页\"}],[\"$\",\"meta\",\"2\",{\"name\":\"author\",\"content\":\"柯岚馨\"}],[\"$\",\"meta\",\"3\",{\"name\":\"keywords\",\"content\":\"柯岚馨,PhD,Research,重庆大学\"}],[\"$\",\"meta\",\"4\",{\"name\":\"creator\",\"content\":\"柯岚馨\"}],[\"$\",\"meta\",\"5\",{\"name\":\"publisher\",\"content\":\"柯岚馨\"}],[\"$\",\"meta\",\"6\",{\"property\":\"og:title\",\"content\":\"Clancy\"}],[\"$\",\"meta\",\"7\",{\"property\":\"og:description\",\"content\":\"柯岚馨的个人主页\"}],[\"$\",\"meta\",\"8\",{\"property\":\"og:site_name\",\"content\":\"柯岚馨's Academic Website\"}],[\"$\",\"meta\",\"9\",{\"property\":\"og:locale\",\"content\":\"en_US\"}],[\"$\",\"meta\",\"10\",{\"property\":\"og:type\",\"content\":\"website\"}],[\"$\",\"meta\",\"11\",{\"name\":\"twitter:card\",\"content\":\"summary\"}],[\"$\",\"meta\",\"12\",{\"name\":\"twitter:title\",\"content\":\"Clancy\"}],[\"$\",\"meta\",\"13\",{\"name\":\"twitter:description\",\"content\":\"柯岚馨的个人主页\"}],[\"$\",\"link\",\"14\",{\"rel\":\"icon\",\"href\":\"/favicon2.jpg\"}]],\"error\":null,\"digest\":\"$undefined\"}\n13:{\"metadata\":\"$19:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script></body></html>
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="柯岚馨的个人学术主页，研究方向为无人机视觉与路径规划。" />
+    <meta name="author" content="柯岚馨" />
+    <meta name="theme-color" content="#f7f5f0" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="favicon2.jpg" type="image/jpeg" />
+    <title>Clancy · Academic Website</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f7f5f0;
+        --surface: rgba(255, 255, 255, 0.82);
+        --surface-strong: #ffffff;
+        --text: #1f2933;
+        --muted: #66727e;
+        --faint: #eef0ed;
+        --line: #dfe3df;
+        --accent: #2c6e73;
+        --accent-strong: #20575c;
+        --accent-soft: #e0efed;
+        --shadow: 0 20px 60px rgba(34, 52, 49, 0.09);
+        --radius: 22px;
+      }
+
+      html[data-theme="dark"] {
+        color-scheme: dark;
+        --bg: #17201f;
+        --surface: rgba(31, 43, 42, 0.88);
+        --surface-strong: #202c2b;
+        --text: #edf3f0;
+        --muted: #b4c1bd;
+        --faint: #263533;
+        --line: #3a4a47;
+        --accent: #8ac9c3;
+        --accent-strong: #b8e2dc;
+        --accent-soft: #284c4a;
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+      }
+
+      * { box-sizing: border-box; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        background:
+          radial-gradient(circle at 8% 0%, rgba(125, 178, 171, 0.16), transparent 28rem),
+          var(--bg);
+        color: var(--text);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.65;
+        transition: background-color 180ms ease, color 180ms ease;
+      }
+
+      a { color: inherit; }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 3px;
+      }
+
+      .skip-link {
+        position: fixed;
+        left: 1rem;
+        top: -5rem;
+        z-index: 100;
+        padding: 0.65rem 0.9rem;
+        border-radius: 0.65rem;
+        background: var(--accent);
+        color: white;
+        text-decoration: none;
+      }
+
+      .skip-link:focus { top: 1rem; }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+        background: color-mix(in srgb, var(--bg) 84%, transparent);
+        backdrop-filter: blur(18px);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1120px;
+        min-height: 4.6rem;
+        margin: 0 auto;
+        padding: 0 1.25rem;
+      }
+
+      .brand {
+        color: var(--text);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.45rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        text-decoration: none;
+      }
+
+      .nav-actions,
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+      }
+
+      .nav-links a,
+      .icon-button,
+      .menu-button {
+        border: 0;
+        border-radius: 0.75rem;
+        color: var(--muted);
+        background: transparent;
+        cursor: pointer;
+        font: inherit;
+        text-decoration: none;
+        transition: color 160ms ease, background 160ms ease;
+      }
+
+      .nav-links a {
+        padding: 0.55rem 0.8rem;
+        font-size: 0.92rem;
+        font-weight: 600;
+      }
+
+      .nav-links a:hover,
+      .icon-button:hover,
+      .menu-button:hover {
+        color: var(--accent-strong);
+        background: var(--accent-soft);
+      }
+
+      .icon-button,
+      .menu-button {
+        display: inline-grid;
+        width: 2.55rem;
+        height: 2.55rem;
+        place-items: center;
+        font-size: 1.15rem;
+      }
+
+      .menu-button { display: none; }
+
+      .mobile-links {
+        display: none;
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 1.25rem 1rem;
+      }
+
+      .mobile-links.is-open { display: grid; gap: 0.2rem; }
+
+      .mobile-links a {
+        padding: 0.7rem 0.8rem;
+        border-radius: 0.7rem;
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      .mobile-links a:hover { background: var(--accent-soft); color: var(--accent-strong); }
+
+      .page {
+        width: min(100% - 2.5rem, 1120px);
+        margin: 0 auto;
+        padding: 4.5rem 0 2rem;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(230px, 0.78fr) minmax(0, 1.45fr);
+        gap: clamp(2.5rem, 7vw, 6rem);
+        align-items: start;
+      }
+
+      .profile {
+        position: sticky;
+        top: 7rem;
+        text-align: center;
+      }
+
+      .avatar {
+        display: block;
+        width: min(100%, 15.5rem);
+        aspect-ratio: 1;
+        margin: 0 auto 1.5rem;
+        border: 0.45rem solid var(--surface-strong);
+        border-radius: 1.8rem;
+        box-shadow: var(--shadow);
+        object-fit: cover;
+        object-position: 32% center;
+      }
+
+      h1, h2, h3 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        letter-spacing: -0.035em;
+        line-height: 1.15;
+      }
+
+      h1 { font-size: clamp(2rem, 4vw, 2.8rem); }
+      h2 { font-size: clamp(1.7rem, 3vw, 2.15rem); }
+      h3 { font-size: 1.18rem; }
+
+      .profile-title {
+        margin: 0.5rem 0 0.15rem;
+        color: var(--accent);
+        font-size: 1.08rem;
+        font-weight: 700;
+      }
+
+      .profile-institution,
+      .muted { color: var(--muted); }
+
+      .socials {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.55rem;
+        margin: 1.35rem 0 1.2rem;
+      }
+
+      .socials a,
+      .pill-link {
+        display: inline-flex;
+        align-items: center;
+        min-height: 2.15rem;
+        padding: 0.35rem 0.7rem;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
+      }
+
+      .socials a:hover,
+      .pill-link:hover { border-color: var(--accent); color: var(--accent-strong); transform: translateY(-1px); }
+
+      .interest-box {
+        padding: 1rem;
+        border: 1px solid var(--line);
+        border-radius: 1rem;
+        background: color-mix(in srgb, var(--surface) 72%, transparent);
+      }
+
+      .eyebrow {
+        margin: 0 0 0.55rem;
+        color: var(--accent);
+        font-size: 0.73rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.45rem; }
+
+      .tag {
+        padding: 0.3rem 0.6rem;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent-strong);
+        font-size: 0.76rem;
+        font-weight: 700;
+      }
+
+      .content { min-width: 0; }
+
+      .intro {
+        max-width: 46rem;
+        padding-bottom: 2.8rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .intro h2 { margin-bottom: 1.1rem; }
+
+      .intro p { margin: 0 0 0.95rem; color: var(--muted); font-size: 1.04rem; }
+
+      .intro a,
+      .publication a,
+      .cv-card a { color: var(--accent-strong); font-weight: 700; }
+
+      .section { padding-top: 3rem; scroll-margin-top: 6rem; }
+
+      .section-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .section-heading p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+      .publication,
+      .cv-card {
+        padding: clamp(1.2rem, 3vw, 1.7rem);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--surface);
+        box-shadow: 0 10px 28px rgba(40, 60, 56, 0.045);
+      }
+
+      .publication { display: grid; grid-template-columns: 1fr auto; gap: 1rem 2rem; }
+
+      .publication h3 { margin-bottom: 0.65rem; }
+
+      .publication .authors,
+      .publication .venue,
+      .publication .description { margin: 0.25rem 0; color: var(--muted); font-size: 0.92rem; }
+
+      .publication .venue { font-style: italic; }
+
+      .publication-meta { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.9rem; }
+
+      .year,
+      .type {
+        padding: 0.25rem 0.55rem;
+        border-radius: 0.45rem;
+        background: var(--faint);
+        color: var(--muted);
+        font-size: 0.75rem;
+        font-weight: 700;
+      }
+
+      .publication-action { align-self: center; white-space: nowrap; }
+
+      .news-list { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
+
+      .news-item {
+        display: grid;
+        grid-template-columns: 5.5rem 1fr;
+        gap: 1rem;
+        padding: 0.85rem 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .news-date { color: var(--accent); font-size: 0.85rem; font-weight: 800; }
+      .news-item p { margin: 0; color: var(--muted); }
+
+      .cv-card { display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.5rem; }
+      .cv-card p { margin: 0; color: var(--muted); }
+      .cv-facts { display: grid; gap: 0.75rem; margin: 0; padding: 0; list-style: none; }
+      .cv-facts li { padding-bottom: 0.75rem; border-bottom: 1px solid var(--line); color: var(--muted); }
+      .cv-facts strong { display: block; color: var(--text); font-size: 0.84rem; }
+
+      .like-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        margin-top: 1.25rem;
+        padding: 0.55rem 0.85rem;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--muted);
+        background: transparent;
+        cursor: pointer;
+        font: inherit;
+        font-size: 0.86rem;
+        font-weight: 700;
+      }
+
+      .like-button:hover,
+      .like-button[aria-pressed="true"] { border-color: #c06b71; color: #a84e58; background: color-mix(in srgb, #f5d9db 32%, transparent); }
+
+      footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0.7rem;
+        margin-top: 4rem;
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      footer a { color: var(--accent-strong); font-weight: 700; }
+
+      @media (max-width: 760px) {
+        .nav-links { display: none; }
+        .menu-button { display: inline-grid; }
+        .page { width: min(100% - 1.5rem, 1120px); padding-top: 2.5rem; }
+        .hero { grid-template-columns: 1fr; gap: 2.5rem; }
+        .profile { position: static; }
+        .profile .avatar { width: 12rem; }
+        .intro { padding-bottom: 2rem; }
+        .publication,
+        .cv-card { grid-template-columns: 1fr; }
+        .publication-action { justify-self: start; }
+        .section { padding-top: 2.3rem; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { transition-duration: 0.01ms !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="#top">Clancy</a>
+        <div class="nav-actions">
+          <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#publications">Publications</a>
+            <a href="#cv">CV</a>
+          </div>
+          <button class="icon-button" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch theme">☾</button>
+          <button class="menu-button" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-links" aria-label="Open main menu">☰</button>
+        </div>
+      </nav>
+      <div class="mobile-links" id="mobile-links">
+        <a href="#about">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#cv">CV</a>
+      </div>
+    </header>
+
+    <main class="page" id="top" tabindex="-1">
+      <div class="hero">
+        <aside class="profile" aria-label="Profile summary">
+          <img class="avatar" src="favicon2.jpg" alt="柯岚馨" width="256" height="256" />
+          <h1>柯岚馨</h1>
+          <p class="profile-title">硕士研究生</p>
+          <p class="profile-institution">重庆大学</p>
+
+          <div class="socials" aria-label="Profile links">
+            <a href="mailto:2486813691@qq.com" aria-label="Email">Email</a>
+            <a href="https://ditu.amap.com/place/B00178X957" target="_blank" rel="noopener noreferrer" aria-label="Location">Chongqing</a>
+            <a href="https://kns.cnki.net/kcms2/author/detail?v=NitQnVYDOcpONJ7tY4ZJonGbvsOykDgezJPa8WISoPtSSZF7Vlqr0AhGx4ur7KyjCEU0rpyzLp_Gx5FkeUaLy2PZBs6AwBkAyZrF721xBAI2WlVOSZnbZAlbKyzq0YKK&uniplatform=NZKPT&language=CHS" target="_blank" rel="noopener noreferrer">CNKI</a>
+            <a href="https://dl.acm.org/profile/99661386316" target="_blank" rel="noopener noreferrer">ACM</a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+
+          <div class="interest-box">
+            <p class="eyebrow">Research interests</p>
+            <div class="tags">
+              <span class="tag">Product Manager</span>
+              <span class="tag">Data Analysis</span>
+              <span class="tag">Drone Vision</span>
+              <span class="tag">Path Planning</span>
+            </div>
+          </div>
+          <button class="like-button" id="like-button" type="button" aria-pressed="false">♡ Like</button>
+        </aside>
+
+        <div class="content">
+          <section class="intro" id="about" aria-labelledby="about-title">
+            <p class="eyebrow">About me</p>
+            <h2 id="about-title">Researching practical intelligence for real-world systems.</h2>
+            <p>I am a Master student at the School of Management Science &amp; Real Estate, Chongqing University, advised by <a href="https://www.msre.cqu.edu.cn/szdw/jslb/lkj.htm" target="_blank" rel="noopener noreferrer">Prof. Kaijian Li</a>.</p>
+            <p>Prior to this, I obtained a Bachelor's degree in Information management and information systems from Fuzhou University.</p>
+            <p>My current research focuses on Drone Vision and Path Planning.</p>
+          </section>
+
+          <section class="section" id="publications" aria-labelledby="publications-title">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Selected work</p>
+                <h2 id="publications-title">Publications</h2>
+              </div>
+              <p>One selected conference paper</p>
+            </div>
+            <article class="publication">
+              <div>
+                <h3><a href="https://doi.org/10.1145/3696500.3696562" target="_blank" rel="noopener noreferrer">Hierarchical Multi-label Classification Model Research for Scenic Area Tourism Resources</a></h3>
+                <p class="authors">Lanxin Ke, Li Jian, Wang Liao, Yibin Chen, Yangqi Cai, Linmei Ye</p>
+                <p class="venue">Proceedings of the 2024 International Conference on Big Data and Digital Management</p>
+                <p class="description">Research on hierarchical multi-label classification of tourism scenic area resources: a MiLCT model integrating Graph-Convolutional Networks and attention-based Transformers for enhanced feature extraction and classification efficacy.</p>
+                <div class="publication-meta">
+                  <span class="year">2024</span>
+                  <span class="type">Conference paper</span>
+                  <span class="type">DOI: 10.1145/3696500.3696562</span>
+                </div>
+              </div>
+              <div class="publication-action">
+                <a class="pill-link" href="https://doi.org/10.1145/3696500.3696562" target="_blank" rel="noopener noreferrer">View paper ↗</a>
+              </div>
+            </article>
+          </section>
+
+          <section class="section" aria-labelledby="news-title">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Updates</p>
+                <h2 id="news-title">News</h2>
+              </div>
+            </div>
+            <ol class="news-list">
+              <li class="news-item"><time class="news-date" datetime="2025-11">2025-11</time><p>Starting my Postgraduate at CQU</p></li>
+              <li class="news-item"><time class="news-date" datetime="2025-06">2025-06</time><p>Graduate from Fuzhou University ヾ(•ω•`)o</p></li>
+            </ol>
+          </section>
+
+          <section class="section" id="cv" aria-labelledby="cv-title">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Background</p>
+                <h2 id="cv-title">CV</h2>
+              </div>
+            </div>
+            <div class="cv-card">
+              <div>
+                <h3>Education &amp; research</h3>
+                <p>Currently pursuing a Master's degree at Chongqing University, with interests spanning drone vision, path planning, data analysis, and product thinking.</p>
+              </div>
+              <ul class="cv-facts">
+                <li><strong>Current</strong>School of Management Science &amp; Real Estate, Chongqing University</li>
+                <li><strong>Previous</strong>Information management and information systems, Fuzhou University</li>
+                <li><strong>Contact</strong><a href="mailto:2486813691@qq.com">2486813691@qq.com</a></li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <footer>
+        <span>Last updated: December 25, 2025</span>
+        <span>Built with <a href="https://github.com/xyjoey/PRISM" target="_blank" rel="noopener noreferrer">PRISM</a> 🚀</span>
+      </footer>
+    </main>
+
+    <script>
+      (() => {
+        const root = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileLinks = document.getElementById('mobile-links');
+        const likeButton = document.getElementById('like-button');
+
+        let savedTheme = null;
+        try { savedTheme = localStorage.getItem('clancy-theme'); } catch (error) {}
+        const initialTheme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+        const applyTheme = (theme) => {
+          root.dataset.theme = theme;
+          themeToggle.textContent = theme === 'dark' ? '☀' : '☾';
+          themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+          themeToggle.title = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+          try { localStorage.setItem('clancy-theme', theme); } catch (error) {}
+        };
+
+        applyTheme(initialTheme);
+        themeToggle.addEventListener('click', () => applyTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
+
+        menuToggle.addEventListener('click', () => {
+          const isOpen = mobileLinks.classList.toggle('is-open');
+          menuToggle.setAttribute('aria-expanded', String(isOpen));
+          menuToggle.setAttribute('aria-label', isOpen ? 'Close main menu' : 'Open main menu');
+          menuToggle.textContent = isOpen ? '×' : '☰';
+        });
+
+        mobileLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+          mobileLinks.classList.remove('is-open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.setAttribute('aria-label', 'Open main menu');
+          menuToggle.textContent = '☰';
+        }));
+
+        let liked = false;
+        try { liked = localStorage.getItem('clancy-liked') === 'true'; } catch (error) {}
+        const paintLike = () => {
+          likeButton.setAttribute('aria-pressed', String(liked));
+          likeButton.textContent = liked ? '♥ Liked' : '♡ Like';
+        };
+        paintLike();
+        likeButton.addEventListener('click', () => {
+          liked = !liked;
+          try { localStorage.setItem('clancy-liked', String(liked)); } catch (error) {}
+          paintLike();
+        });
+      })();
+    </script>
+  </body>
+</html>
