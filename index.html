@@ -1,27 +1,28 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="zh-CN" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="柯岚馨的个人学术主页，研究方向为无人机视觉与路径规划。" />
-    <meta name="author" content="柯岚馨" />
+    <meta name="description" content="廖望的个人主页：AI 应用开发、自然语言处理、信息计量与科学评价。" />
+    <meta name="author" content="廖望" />
     <meta name="theme-color" content="#f7f5f0" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="alternate icon" href="favicon2.jpg" type="image/jpeg" />
-    <title>Clancy · Academic Website</title>
+    <link rel="alternate icon" href="profile.png" type="image/png" />
+    <title>廖望 · AI 应用与学术研究</title>
     <style>
       :root {
         color-scheme: light;
         --bg: #f7f5f0;
-        --surface: rgba(255, 255, 255, 0.82);
+        --surface: rgba(255, 255, 255, 0.84);
         --surface-strong: #ffffff;
-        --text: #1f2933;
-        --muted: #66727e;
-        --faint: #eef0ed;
-        --line: #dfe3df;
+        --text: #20272d;
+        --muted: #68747d;
+        --faint: #eef1ef;
+        --line: #dce2df;
         --accent: #2c6e73;
         --accent-strong: #20575c;
         --accent-soft: #e0efed;
+        --warm: #9a6840;
         --shadow: 0 20px 60px rgba(34, 52, 49, 0.09);
         --radius: 22px;
       }
@@ -29,7 +30,7 @@
       html[data-theme="dark"] {
         color-scheme: dark;
         --bg: #17201f;
-        --surface: rgba(31, 43, 42, 0.88);
+        --surface: rgba(31, 43, 42, 0.9);
         --surface-strong: #202c2b;
         --text: #edf3f0;
         --muted: #b4c1bd;
@@ -38,45 +39,25 @@
         --accent: #8ac9c3;
         --accent-strong: #b8e2dc;
         --accent-soft: #284c4a;
+        --warm: #e0ad7d;
         --shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
       }
 
       * { box-sizing: border-box; }
-
       html { scroll-behavior: smooth; }
-
       body {
         margin: 0;
         min-width: 320px;
-        background:
-          radial-gradient(circle at 8% 0%, rgba(125, 178, 171, 0.16), transparent 28rem),
-          var(--bg);
+        background: radial-gradient(circle at 8% 0%, rgba(125, 178, 171, 0.16), transparent 28rem), var(--bg);
         color: var(--text);
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-family: Inter, "PingFang SC", "Microsoft YaHei", ui-sans-serif, system-ui, sans-serif;
         line-height: 1.65;
         transition: background-color 180ms ease, color 180ms ease;
       }
 
       a { color: inherit; }
-
-      a:focus-visible,
-      button:focus-visible {
-        outline: 3px solid var(--accent);
-        outline-offset: 3px;
-      }
-
-      .skip-link {
-        position: fixed;
-        left: 1rem;
-        top: -5rem;
-        z-index: 100;
-        padding: 0.65rem 0.9rem;
-        border-radius: 0.65rem;
-        background: var(--accent);
-        color: white;
-        text-decoration: none;
-      }
-
+      a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+      .skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 100; padding: .65rem .9rem; border-radius: .65rem; background: var(--accent); color: #fff; text-decoration: none; }
       .skip-link:focus { top: 1rem; }
 
       .site-header {
@@ -84,452 +65,320 @@
         top: 0;
         z-index: 20;
         border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
-        background: color-mix(in srgb, var(--bg) 84%, transparent);
+        background: color-mix(in srgb, var(--bg) 86%, transparent);
         backdrop-filter: blur(18px);
       }
 
-      .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        max-width: 1120px;
-        min-height: 4.6rem;
-        margin: 0 auto;
-        padding: 0 1.25rem;
-      }
-
-      .brand {
-        color: var(--text);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 1.45rem;
-        font-weight: 700;
-        letter-spacing: -0.03em;
-        text-decoration: none;
-      }
-
-      .nav-actions,
-      .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 0.35rem;
-      }
-
-      .nav-links a,
-      .icon-button,
-      .menu-button {
-        border: 0;
-        border-radius: 0.75rem;
-        color: var(--muted);
-        background: transparent;
-        cursor: pointer;
-        font: inherit;
-        text-decoration: none;
-        transition: color 160ms ease, background 160ms ease;
-      }
-
-      .nav-links a {
-        padding: 0.55rem 0.8rem;
-        font-size: 0.92rem;
-        font-weight: 600;
-      }
-
-      .nav-links a:hover,
-      .icon-button:hover,
-      .menu-button:hover {
-        color: var(--accent-strong);
-        background: var(--accent-soft);
-      }
-
-      .icon-button,
-      .menu-button {
-        display: inline-grid;
-        width: 2.55rem;
-        height: 2.55rem;
-        place-items: center;
-        font-size: 1.15rem;
-      }
-
+      .nav { display: flex; align-items: center; justify-content: space-between; max-width: 1180px; min-height: 4.6rem; margin: 0 auto; padding: 0 1.25rem; }
+      .brand { color: var(--text); font-family: Georgia, "Songti SC", "SimSun", serif; font-size: 1.45rem; font-weight: 700; letter-spacing: -.03em; text-decoration: none; }
+      .nav-actions, .nav-links { display: flex; align-items: center; gap: .2rem; }
+      .nav-links a, .icon-button, .menu-button { border: 0; border-radius: .75rem; color: var(--muted); background: transparent; cursor: pointer; font: inherit; text-decoration: none; transition: color 160ms ease, background 160ms ease; }
+      .nav-links a { padding: .55rem .62rem; font-size: .82rem; font-weight: 700; }
+      .nav-links a:hover, .icon-button:hover, .menu-button:hover { color: var(--accent-strong); background: var(--accent-soft); }
+      .icon-button, .menu-button { display: inline-grid; width: 2.55rem; height: 2.55rem; place-items: center; font-size: 1.15rem; }
       .menu-button { display: none; }
-
-      .mobile-links {
-        display: none;
-        max-width: 1120px;
-        margin: 0 auto;
-        padding: 0 1.25rem 1rem;
-      }
-
-      .mobile-links.is-open { display: grid; gap: 0.2rem; }
-
-      .mobile-links a {
-        padding: 0.7rem 0.8rem;
-        border-radius: 0.7rem;
-        color: var(--muted);
-        text-decoration: none;
-      }
-
+      .mobile-links { display: none; max-width: 1180px; margin: 0 auto; padding: 0 1.25rem 1rem; }
+      .mobile-links.is-open { display: grid; gap: .2rem; }
+      .mobile-links a { padding: .7rem .8rem; border-radius: .7rem; color: var(--muted); text-decoration: none; }
       .mobile-links a:hover { background: var(--accent-soft); color: var(--accent-strong); }
 
-      .page {
-        width: min(100% - 2.5rem, 1120px);
-        margin: 0 auto;
-        padding: 4.5rem 0 2rem;
-      }
-
-      .hero {
-        display: grid;
-        grid-template-columns: minmax(230px, 0.78fr) minmax(0, 1.45fr);
-        gap: clamp(2.5rem, 7vw, 6rem);
-        align-items: start;
-      }
-
-      .profile {
-        position: sticky;
-        top: 7rem;
-        text-align: center;
-      }
-
-      .avatar {
-        display: block;
-        width: min(100%, 15.5rem);
-        aspect-ratio: 1;
-        margin: 0 auto 1.5rem;
-        border: 0.45rem solid var(--surface-strong);
-        border-radius: 1.8rem;
-        box-shadow: var(--shadow);
-        object-fit: cover;
-        object-position: 32% center;
-      }
-
-      h1, h2, h3 {
-        margin: 0;
-        font-family: Georgia, "Times New Roman", serif;
-        letter-spacing: -0.035em;
-        line-height: 1.15;
-      }
-
+      .page { width: min(100% - 2.5rem, 1180px); margin: 0 auto; padding: 4.5rem 0 2rem; }
+      .hero { display: grid; grid-template-columns: minmax(230px, .74fr) minmax(0, 1.8fr); gap: clamp(2.5rem, 6vw, 5.5rem); align-items: start; }
+      .profile { position: sticky; top: 7rem; text-align: center; }
+      .avatar { display: block; width: min(100%, 15rem); aspect-ratio: 1 / 1.18; margin: 0 auto 1.35rem; border: .45rem solid var(--surface-strong); border-radius: 1.8rem; box-shadow: var(--shadow); object-fit: cover; object-position: center top; }
+      h1, h2, h3 { margin: 0; font-family: Georgia, "Songti SC", "SimSun", serif; letter-spacing: -.035em; line-height: 1.2; }
       h1 { font-size: clamp(2rem, 4vw, 2.8rem); }
-      h2 { font-size: clamp(1.7rem, 3vw, 2.15rem); }
-      h3 { font-size: 1.18rem; }
+      h2 { font-size: clamp(1.65rem, 3vw, 2.2rem); }
+      h3 { font-size: 1.12rem; }
+      .profile-title { margin: .48rem 0 .12rem; color: var(--accent); font-size: 1.05rem; font-weight: 800; }
+      .profile-institution, .muted { color: var(--muted); }
 
-      .profile-title {
-        margin: 0.5rem 0 0.15rem;
-        color: var(--accent);
-        font-size: 1.08rem;
-        font-weight: 700;
-      }
-
-      .profile-institution,
-      .muted { color: var(--muted); }
-
-      .socials {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.55rem;
-        margin: 1.35rem 0 1.2rem;
-      }
-
-      .socials a,
-      .pill-link {
-        display: inline-flex;
-        align-items: center;
-        min-height: 2.15rem;
-        padding: 0.35rem 0.7rem;
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        color: var(--muted);
-        font-size: 0.78rem;
-        font-weight: 700;
-        text-decoration: none;
-        transition: border-color 160ms ease, color 160ms ease, transform 160ms ease;
-      }
-
-      .socials a:hover,
-      .pill-link:hover { border-color: var(--accent); color: var(--accent-strong); transform: translateY(-1px); }
-
-      .interest-box {
-        padding: 1rem;
-        border: 1px solid var(--line);
-        border-radius: 1rem;
-        background: color-mix(in srgb, var(--surface) 72%, transparent);
-      }
-
-      .eyebrow {
-        margin: 0 0 0.55rem;
-        color: var(--accent);
-        font-size: 0.73rem;
-        font-weight: 800;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-      }
-
-      .tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.45rem; }
-
-      .tag {
-        padding: 0.3rem 0.6rem;
-        border-radius: 999px;
-        background: var(--accent-soft);
-        color: var(--accent-strong);
-        font-size: 0.76rem;
-        font-weight: 700;
-      }
-
+      .contact-list { display: grid; gap: .45rem; margin: 1.3rem 0 1.25rem; text-align: left; }
+      .contact-list a { display: flex; align-items: center; gap: .55rem; color: var(--muted); font-size: .82rem; text-decoration: none; overflow-wrap: anywhere; }
+      .contact-list a:hover { color: var(--accent-strong); }
+      .contact-icon { display: inline-grid; width: 1.45rem; height: 1.45rem; flex: 0 0 1.45rem; place-items: center; border-radius: .45rem; background: var(--accent-soft); color: var(--accent-strong); font-size: .72rem; font-weight: 800; }
+      .interest-box { padding: 1rem; border: 1px solid var(--line); border-radius: 1rem; background: color-mix(in srgb, var(--surface) 72%, transparent); }
+      .eyebrow { margin: 0 0 .55rem; color: var(--accent); font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+      .tags { display: flex; flex-wrap: wrap; justify-content: center; gap: .45rem; }
+      .tag, .chip { padding: .3rem .6rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); font-size: .75rem; font-weight: 700; }
       .content { min-width: 0; }
+      .intro { max-width: 52rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+      .intro h2 { margin-bottom: 1.05rem; }
+      .intro p { margin: 0 0 .8rem; color: var(--muted); font-size: 1rem; }
+      .intro a, .card a, .publication a, .project a, .cv-card a { color: var(--accent-strong); font-weight: 700; }
 
-      .intro {
-        max-width: 46rem;
-        padding-bottom: 2.8rem;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .intro h2 { margin-bottom: 1.1rem; }
-
-      .intro p { margin: 0 0 0.95rem; color: var(--muted); font-size: 1.04rem; }
-
-      .intro a,
-      .publication a,
-      .cv-card a { color: var(--accent-strong); font-weight: 700; }
+      .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: .7rem; margin-top: 1.35rem; }
+      .metric { padding: .8rem .9rem; border: 1px solid var(--line); border-radius: .9rem; background: var(--surface); }
+      .metric strong { display: block; color: var(--accent-strong); font-family: Georgia, "Songti SC", serif; font-size: 1.35rem; }
+      .metric span { color: var(--muted); font-size: .75rem; }
 
       .section { padding-top: 3rem; scroll-margin-top: 6rem; }
+      .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+      .section-heading p { margin: 0; color: var(--muted); font-size: .86rem; }
+      .card, .publication, .project, .cv-card { padding: clamp(1.15rem, 2.5vw, 1.55rem); border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: 0 10px 28px rgba(40, 60, 56, .045); }
+      .card + .card, .publication + .publication, .project + .project { margin-top: .8rem; }
+      .card-heading { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
+      .card-heading h3 { max-width: 75%; }
+      .date { flex: 0 0 auto; color: var(--accent); font-size: .8rem; font-weight: 800; white-space: nowrap; }
+      .role { margin: .25rem 0 .6rem; color: var(--warm); font-size: .87rem; font-weight: 800; }
+      .card p, .card ul, .publication p, .project p, .cv-card p { color: var(--muted); font-size: .88rem; }
+      .card p, .publication p, .project p { margin: .35rem 0; }
+      .bullet-list { display: grid; gap: .28rem; margin: .7rem 0 0; padding-left: 1.1rem; }
+      .bullet-list li { color: var(--muted); font-size: .86rem; }
+      .bullet-list strong { color: var(--text); }
+      .stack { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .75rem; }
+      .chip { background: var(--faint); color: var(--muted); font-size: .7rem; }
 
-      .section-heading {
-        display: flex;
-        align-items: end;
-        justify-content: space-between;
-        gap: 1rem;
-        margin-bottom: 1rem;
-      }
+      .education-list { display: grid; gap: .8rem; }
+      .education-item { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+      .education-item:first-child { padding-top: 0; }
+      .education-item:last-child { border-bottom: 0; padding-bottom: 0; }
+      .education-year { color: var(--accent); font-size: .8rem; font-weight: 800; }
+      .education-item h3 { margin-bottom: .2rem; }
+      .education-item p { margin: .15rem 0; color: var(--muted); font-size: .86rem; }
 
-      .section-heading p { margin: 0; color: var(--muted); font-size: 0.9rem; }
-
-      .publication,
-      .cv-card {
-        padding: clamp(1.2rem, 3vw, 1.7rem);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        background: var(--surface);
-        box-shadow: 0 10px 28px rgba(40, 60, 56, 0.045);
-      }
-
-      .publication { display: grid; grid-template-columns: 1fr auto; gap: 1rem 2rem; }
-
-      .publication h3 { margin-bottom: 0.65rem; }
-
-      .publication .authors,
-      .publication .venue,
-      .publication .description { margin: 0.25rem 0; color: var(--muted); font-size: 0.92rem; }
-
+      .publication h3, .project h3 { margin-bottom: .55rem; }
+      .publication .authors, .publication .venue, .project .project-meta { margin: .25rem 0; color: var(--muted); font-size: .83rem; }
       .publication .venue { font-style: italic; }
+      .publication-meta { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .85rem; }
+      .year, .type { padding: .25rem .55rem; border-radius: .45rem; background: var(--faint); color: var(--muted); font-size: .7rem; font-weight: 700; }
+      .publication-action { margin-top: .8rem; }
+      .pill-link, .like-button { display: inline-flex; align-items: center; gap: .45rem; min-height: 2.15rem; padding: .38rem .72rem; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: transparent; font-size: .78rem; font-weight: 800; text-decoration: none; }
+      .pill-link:hover { border-color: var(--accent); color: var(--accent-strong); }
 
-      .publication-meta { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.9rem; }
+      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+      .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .75rem; }
+      .skill-group { padding: 1rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); }
+      .skill-group h3 { margin-bottom: .45rem; font-size: 1rem; }
+      .skill-group p { margin: 0; color: var(--muted); font-size: .82rem; }
+      .honors { margin: 0; padding-left: 1.1rem; color: var(--muted); font-size: .86rem; }
+      .honors li + li { margin-top: .4rem; }
 
-      .year,
-      .type {
-        padding: 0.25rem 0.55rem;
-        border-radius: 0.45rem;
-        background: var(--faint);
-        color: var(--muted);
-        font-size: 0.75rem;
-        font-weight: 700;
-      }
-
-      .publication-action { align-self: center; white-space: nowrap; }
-
-      .news-list { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
-
-      .news-item {
-        display: grid;
-        grid-template-columns: 5.5rem 1fr;
-        gap: 1rem;
-        padding: 0.85rem 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .news-date { color: var(--accent); font-size: 0.85rem; font-weight: 800; }
-      .news-item p { margin: 0; color: var(--muted); }
-
-      .cv-card { display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.5rem; }
-      .cv-card p { margin: 0; color: var(--muted); }
-      .cv-facts { display: grid; gap: 0.75rem; margin: 0; padding: 0; list-style: none; }
-      .cv-facts li { padding-bottom: 0.75rem; border-bottom: 1px solid var(--line); color: var(--muted); }
-      .cv-facts strong { display: block; color: var(--text); font-size: 0.84rem; }
-
-      .like-button {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.45rem;
-        margin-top: 1.25rem;
-        padding: 0.55rem 0.85rem;
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        color: var(--muted);
-        background: transparent;
-        cursor: pointer;
-        font: inherit;
-        font-size: 0.86rem;
-        font-weight: 700;
-      }
-
-      .like-button:hover,
-      .like-button[aria-pressed="true"] { border-color: #c06b71; color: #a84e58; background: color-mix(in srgb, #f5d9db 32%, transparent); }
-
-      footer {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 0.7rem;
-        margin-top: 4rem;
-        padding-top: 1.25rem;
-        border-top: 1px solid var(--line);
-        color: var(--muted);
-        font-size: 0.82rem;
-      }
-
+      .like-button { margin-top: 1.25rem; cursor: pointer; }
+      .like-button:hover, .like-button[aria-pressed="true"] { border-color: #c06b71; color: #a84e58; background: color-mix(in srgb, #f5d9db 32%, transparent); }
+      footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .7rem; margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .78rem; }
       footer a { color: var(--accent-strong); font-weight: 700; }
 
+      @media (max-width: 900px) {
+        .nav-links a { padding-inline: .45rem; font-size: .76rem; }
+        .hero { grid-template-columns: minmax(210px, .68fr) minmax(0, 1.5fr); gap: 2.5rem; }
+      }
       @media (max-width: 760px) {
         .nav-links { display: none; }
         .menu-button { display: inline-grid; }
-        .page { width: min(100% - 1.5rem, 1120px); padding-top: 2.5rem; }
+        .page { width: min(100% - 1.5rem, 1180px); padding-top: 2.5rem; }
         .hero { grid-template-columns: 1fr; gap: 2.5rem; }
         .profile { position: static; }
         .profile .avatar { width: 12rem; }
         .intro { padding-bottom: 2rem; }
-        .publication,
-        .cv-card { grid-template-columns: 1fr; }
-        .publication-action { justify-self: start; }
-        .section { padding-top: 2.3rem; }
+        .two-col, .skills-grid { grid-template-columns: 1fr; }
       }
-
+      @media (max-width: 480px) {
+        .metrics { grid-template-columns: 1fr; }
+        .education-item { grid-template-columns: 1fr; gap: .15rem; }
+        .card-heading { display: block; }
+        .card-heading h3 { max-width: none; }
+        .date { display: block; margin-top: .3rem; }
+      }
       @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
-        *, *::before, *::after { transition-duration: 0.01ms !important; }
+        *, *::before, *::after { transition-duration: .01ms !important; }
       }
     </style>
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
+    <a class="skip-link" href="#main-content">跳到主要内容</a>
     <header class="site-header">
-      <nav class="nav" aria-label="Main navigation">
-        <a class="brand" href="#top">Clancy</a>
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="#top">廖望</a>
         <div class="nav-actions">
           <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#publications">Publications</a>
-            <a href="#cv">CV</a>
+            <a href="#about">关于我</a>
+            <a href="#education">教育</a>
+            <a href="#experience">实习</a>
+            <a href="#publications">学术成果</a>
+            <a href="#projects">项目</a>
+            <a href="#skills">技能</a>
           </div>
-          <button class="icon-button" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch theme">☾</button>
-          <button class="menu-button" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-links" aria-label="Open main menu">☰</button>
+          <button class="icon-button" id="theme-toggle" type="button" aria-label="切换到深色模式" title="切换主题">☾</button>
+          <button class="menu-button" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-links" aria-label="打开主菜单">☰</button>
         </div>
       </nav>
       <div class="mobile-links" id="mobile-links">
-        <a href="#about">About</a>
-        <a href="#publications">Publications</a>
-        <a href="#cv">CV</a>
+        <a href="#about">关于我</a>
+        <a href="#education">教育</a>
+        <a href="#experience">实习</a>
+        <a href="#publications">学术成果</a>
+        <a href="#projects">项目</a>
+        <a href="#skills">技能</a>
       </div>
     </header>
 
     <main class="page" id="top" tabindex="-1">
       <div class="hero">
-        <aside class="profile" aria-label="Profile summary">
-          <img class="avatar" src="favicon2.jpg" alt="柯岚馨" width="256" height="256" />
-          <h1>柯岚馨</h1>
-          <p class="profile-title">硕士研究生</p>
-          <p class="profile-institution">重庆大学</p>
+        <aside class="profile" aria-label="个人信息">
+          <img class="avatar" src="profile.png" alt="廖望的旅行照片" width="132" height="132" />
+          <h1>廖望</h1>
+          <p class="profile-title">管理学硕士研究生</p>
+          <p class="profile-institution">杭州电子科技大学 · 杭州</p>
 
-          <div class="socials" aria-label="Profile links">
-            <a href="mailto:2486813691@qq.com" aria-label="Email">Email</a>
-            <a href="https://ditu.amap.com/place/B00178X957" target="_blank" rel="noopener noreferrer" aria-label="Location">Chongqing</a>
-            <a href="https://kns.cnki.net/kcms2/author/detail?v=NitQnVYDOcpONJ7tY4ZJonGbvsOykDgezJPa8WISoPtSSZF7Vlqr0AhGx4ur7KyjCEU0rpyzLp_Gx5FkeUaLy2PZBs6AwBkAyZrF721xBAI2WlVOSZnbZAlbKyzq0YKK&uniplatform=NZKPT&language=CHS" target="_blank" rel="noopener noreferrer">CNKI</a>
-            <a href="https://dl.acm.org/profile/99661386316" target="_blank" rel="noopener noreferrer">ACM</a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <div class="contact-list" aria-label="联系方式">
+            <a href="mailto:LiaoWangg@163.com"><span class="contact-icon">@</span>LiaoWangg@163.com</a>
+            <a href="tel:+8615159180500"><span class="contact-icon">☎</span>(+86) 151-5918-0500</a>
+            <a href="https://github.com/TaulGit" target="_blank" rel="noopener noreferrer"><span class="contact-icon">GH</span>github.com/TaulGit</a>
+            <a href="https://ditu.amap.com/search?query=%E6%9D%AD%E5%B7%9E" target="_blank" rel="noopener noreferrer"><span class="contact-icon">⌖</span>浙江 · 杭州</a>
           </div>
 
           <div class="interest-box">
-            <p class="eyebrow">Research interests</p>
+            <p class="eyebrow">研究方向</p>
             <div class="tags">
-              <span class="tag">Product Manager</span>
-              <span class="tag">Data Analysis</span>
-              <span class="tag">Drone Vision</span>
-              <span class="tag">Path Planning</span>
+              <span class="tag">自然语言处理</span>
+              <span class="tag">信息计量</span>
+              <span class="tag">科学评价</span>
+              <span class="tag">AI 应用</span>
             </div>
           </div>
           <button class="like-button" id="like-button" type="button" aria-pressed="false">♡ Like</button>
         </aside>
 
-        <div class="content">
+        <div class="content" id="main-content">
           <section class="intro" id="about" aria-labelledby="about-title">
             <p class="eyebrow">About me</p>
-            <h2 id="about-title">Researching practical intelligence for real-world systems.</h2>
-            <p>I am a Master student at the School of Management Science &amp; Real Estate, Chongqing University, advised by <a href="https://www.msre.cqu.edu.cn/szdw/jslb/lkj.htm" target="_blank" rel="noopener noreferrer">Prof. Kaijian Li</a>.</p>
-            <p>Prior to this, I obtained a Bachelor's degree in Information management and information systems from Fuzhou University.</p>
-            <p>My current research focuses on Drone Vision and Path Planning.</p>
+            <h2 id="about-title">把大模型能力做成真正可用的产品。</h2>
+            <p>我目前就读于杭州电子科技大学数字媒体与文法学院社会管理科学与工程专业，师从宋艳辉教授，研究方向为自然语言处理、信息计量与科学评价。</p>
+            <p>我本科毕业于福州大学信息管理与信息系统专业，具备从模型训练、Agent 工作流到前后端产品交付的完整实践经验。</p>
+            <p>目前在杭州一往科技有限公司负责 AI 应用开发与全栈工程，参与 DooPoo AI 驱动内容生产平台的主流程、模型路由、用户与计费等模块建设。</p>
+            <div class="metrics" aria-label="工作成果概览">
+              <div class="metric"><strong>500+</strong><span>上线日均调用请求</span></div>
+              <div class="metric"><strong>85%</strong><span>单次生成成功率</span></div>
+              <div class="metric"><strong>95%+</strong><span>兜底率</span></div>
+            </div>
+          </section>
+
+          <section class="section" id="education" aria-labelledby="education-title">
+            <div class="section-heading">
+              <div><p class="eyebrow">Education</p><h2 id="education-title">教育经历</h2></div>
+              <p>管理学 · 信息管理</p>
+            </div>
+            <div class="card education-list">
+              <div class="education-item">
+                <div class="education-year">2025 - 至今</div>
+                <div>
+                  <h3>杭州电子科技大学</h3>
+                  <p>数字媒体与文法学院 · 社会管理科学与工程 · 管理学硕士</p>
+                  <p>导师：宋艳辉教授 · 研究方向：自然语言处理、信息计量与科学评价</p>
+                </div>
+              </div>
+              <div class="education-item">
+                <div class="education-year">2021 - 2025</div>
+                <div>
+                  <h3>福州大学（211、双一流）</h3>
+                  <p>经济与管理学院 · 信息管理与信息系统 · 工科学士</p>
+                  <p>GPA 3.4 / 4.0（前 30%） · CET6 566 · IELTS 6.5</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="section" id="experience" aria-labelledby="experience-title">
+            <div class="section-heading">
+              <div><p class="eyebrow">Experience</p><h2 id="experience-title">实习经历</h2></div>
+              <p>AI 应用 · 项目管理 · 文旅产品</p>
+            </div>
+            <article class="card">
+              <div class="card-heading"><h3>杭州一往科技有限公司</h3><time class="date" datetime="2026-05">2026.05 - 至今</time></div>
+              <p class="role">AI 应用开发 - 全栈工程师 · DooPoo AI 驱动内容生产平台</p>
+              <ul class="bullet-list">
+                <li>参与从画布、剧本、角色、资产、分镜到时间轴的完整 AI 内容生产工作流建设。</li>
+                <li>设计多模型智能路由，支持文字、图像、视频生成服务，并实现自动分发、指数退避重试与故障切换。</li>
+                <li>按需求日均迭代，交付主流程、用户、积分订阅计费、团队管理等模块；支撑上线日均 500+ 调用请求。</li>
+              </ul>
+              <div class="stack"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">TanStack</span><span class="chip">Tailwind</span><span class="chip">Supabase</span><span class="chip">Cloudflare</span><span class="chip">Bun</span></div>
+            </article>
+            <article class="card">
+              <div class="card-heading"><h3>上海名匠网络科技有限公司 · 数智化中心</h3><time class="date" datetime="2025-02">2025.02 - 2025.06</time></div>
+              <p class="role">项目经理实习生</p>
+              <ul class="bullet-list">
+                <li>负责公司自研 OA 运维，协调 PM 与开发团队推进数智化项目，定期产出需求反馈文档。</li>
+                <li>推动数智化项目从零到标准化，基于结算需求建立分类体系与规范流程，跟进信息化转型执行进度。</li>
+              </ul>
+            </article>
+            <article class="card">
+              <div class="card-heading"><h3>福州市文化和旅游局 · 闽侯县侯官村委会</h3><time class="date" datetime="2023-05">2023.05 - 2023.09</time></div>
+              <p class="role">文旅产品实习生 · 政府实习</p>
+              <ul class="bullet-list">
+                <li>走访各村镇，调研乡村振兴发展模式和运营机制，负责团队宣传报道及报告撰写。</li>
+                <li>产出 5 万余字报告及环线公交设计方案，实践成果获人民日报、福州日报、中青校媒等媒体报道。</li>
+              </ul>
+            </article>
           </section>
 
           <section class="section" id="publications" aria-labelledby="publications-title">
             <div class="section-heading">
-              <div>
-                <p class="eyebrow">Selected work</p>
-                <h2 id="publications-title">Publications</h2>
-              </div>
-              <p>One selected conference paper</p>
+              <div><p class="eyebrow">Research</p><h2 id="publications-title">学术成果</h2></div>
+              <p>模型、知识图谱与科学评价</p>
             </div>
             <article class="publication">
-              <div>
-                <h3><a href="https://doi.org/10.1145/3696500.3696562" target="_blank" rel="noopener noreferrer">Hierarchical Multi-label Classification Model Research for Scenic Area Tourism Resources</a></h3>
-                <p class="authors">Lanxin Ke, Li Jian, Wang Liao, Yibin Chen, Yangqi Cai, Linmei Ye</p>
-                <p class="venue">Proceedings of the 2024 International Conference on Big Data and Digital Management</p>
-                <p class="description">Research on hierarchical multi-label classification of tourism scenic area resources: a MiLCT model integrating Graph-Convolutional Networks and attention-based Transformers for enhanced feature extraction and classification efficacy.</p>
-                <div class="publication-meta">
-                  <span class="year">2024</span>
-                  <span class="type">Conference paper</span>
-                  <span class="type">DOI: 10.1145/3696500.3696562</span>
-                </div>
-              </div>
-              <div class="publication-action">
-                <a class="pill-link" href="https://doi.org/10.1145/3696500.3696562" target="_blank" rel="noopener noreferrer">View paper ↗</a>
-              </div>
+              <h3>SynRA-NER：句法感知与检索增强 NER 框架</h3>
+              <p class="authors">2025.12 - 2026.06 · Information Processing and Management（中科院一区、CCF-B）在投</p>
+              <p>自建 3A2017v4 数据集并对齐 MSRA、Weibo 公共数据集，引入 HanLP 句法信息、FAISS 动态 Few-Shot 检索增强与 LLaMA-Factory LoRA 微调 Qwen3-8B；F1 提高 6%。</p>
+              <div class="publication-meta"><span class="year">SFT + LoRA</span><span class="type">RAG</span><span class="type">NER</span><span class="type">Qwen3-8B</span></div>
+            </article>
+            <article class="publication">
+              <h3>基于实体识别与关系抽取的科学知识图谱构建研究</h3>
+              <p class="authors">2025 · 中国情报学年会暨情报学与情报工作发展论坛、博士生学术论坛录用</p>
+              <p>构建 RoBERTa-BiLSTM-CRF 模型完成实体识别与关系抽取，并基于 7 类关系在 Neo4j 中构建垂直科学知识图谱，实现领域分类体系的结构化关联。</p>
+              <div class="publication-meta"><span class="year">RoBERTa-BiLSTM-CRF</span><span class="type">Neo4j</span><span class="type">图谱构建</span></div>
+            </article>
+            <article class="publication">
+              <h3><a href="https://doi.org/10.1145/3696500.3696562" target="_blank" rel="noopener noreferrer">Hierarchical Multi-label Classification Model Research for Scenic Area Tourism Resources</a></h3>
+              <p class="authors">2024 · Proceedings of the 2024 International Conference on Big Data and Digital Management（ICBDDM2024）</p>
+              <p>采用 FastText、Bi-LSTM、Transformer 与 GCN 构建层级多标签分类模型 Mi-LCT，实现旅游景点资源的自动精准分类，并申得国家发明专利一项。</p>
+              <div class="publication-meta"><span class="year">2024</span><span class="type">EI / Scopus</span><span class="type">Mi-LCT</span></div>
+              <div class="publication-action"><a class="pill-link" href="https://doi.org/10.1145/3696500.3696562" target="_blank" rel="noopener noreferrer">查看论文 ↗</a></div>
             </article>
           </section>
 
-          <section class="section" aria-labelledby="news-title">
+          <section class="section" id="projects" aria-labelledby="projects-title">
             <div class="section-heading">
-              <div>
-                <p class="eyebrow">Updates</p>
-                <h2 id="news-title">News</h2>
-              </div>
+              <div><p class="eyebrow">Projects</p><h2 id="projects-title">项目经历</h2></div>
+              <p>Agent · 数据分析 · 产品系统</p>
             </div>
-            <ol class="news-list">
-              <li class="news-item"><time class="news-date" datetime="2025-11">2025-11</time><p>Starting my Postgraduate at CQU</p></li>
-              <li class="news-item"><time class="news-date" datetime="2025-06">2025-06</time><p>Graduate from Fuzhou University ヾ(•ω•`)o</p></li>
-            </ol>
+            <article class="project">
+              <div class="card-heading"><h3>RouteAI · 基于 LangGraph 的 Multi-Agent 协作旅行规划系统</h3><time class="date" datetime="2026-03">2026.03 - 2026.06</time></div>
+              <ul class="bullet-list">
+                <li>基于 StateGraph 编排从需求分析到行程生成的状态流转，通过 SSE 向前端推送 Agent 实时执行状态。</li>
+                <li>集成高德地图 API 搜索 POI、路径和天气，构建距离矩阵，结合贪心 TSP 算法与 LLM 偏好重排。</li>
+                <li>引入 Session_id 与 Checkpointer 留存对话状态，支持用户在多轮交互中逐步完善旅行需求。</li>
+                <li>前端 SPA 部署至 Vercel 与 Netlify，后端 FastAPI 通过 Cloudflare Tunnel 暴露公网。</li>
+              </ul>
+              <div class="stack"><span class="chip">LangGraph</span><span class="chip">FastAPI</span><span class="chip">SSE</span><span class="chip">高德地图 API</span><span class="chip">Vercel</span></div>
+            </article>
+            <div class="two-col">
+              <article class="project"><div class="card-heading"><h3>中国图书馆网络影响力指数 2025 年评价项目</h3><time class="date">2025</time></div><p>参与构建图书馆影响力数据库，开发影响力评价与服务系统，作为编者研制发布《数智时代中国图书馆影响力评价报告（2025）》。 </p></article>
+              <article class="project"><div class="card-heading"><h3>预制菜生产与前景潜力研究</h3><time class="date">2023</time></div><p>使用 LDA、列联分析、Logistic、灰色关联等方法分析预制菜需求，并开发个性化饮食健康监控系统，申得软件著作权专利一项。</p></article>
+            </div>
           </section>
 
-          <section class="section" id="cv" aria-labelledby="cv-title">
+          <section class="section" id="skills" aria-labelledby="skills-title">
             <div class="section-heading">
-              <div>
-                <p class="eyebrow">Background</p>
-                <h2 id="cv-title">CV</h2>
-              </div>
+              <div><p class="eyebrow">Capabilities</p><h2 id="skills-title">技能与荣誉</h2></div>
+              <p>从模型到产品的完整交付</p>
             </div>
-            <div class="cv-card">
-              <div>
-                <h3>Education &amp; research</h3>
-                <p>Currently pursuing a Master's degree at Chongqing University, with interests spanning drone vision, path planning, data analysis, and product thinking.</p>
-              </div>
-              <ul class="cv-facts">
-                <li><strong>Current</strong>School of Management Science &amp; Real Estate, Chongqing University</li>
-                <li><strong>Previous</strong>Information management and information systems, Fuzhou University</li>
-                <li><strong>Contact</strong><a href="mailto:2486813691@qq.com">2486813691@qq.com</a></li>
-              </ul>
+            <div class="skills-grid">
+              <div class="skill-group"><h3>大模型训推应用</h3><p>PyTorch、LangChain、RAG、LoRA、Agent</p></div>
+              <div class="skill-group"><h3>全栈开发</h3><p>React 19、TanStack Start / Router、Tailwind CSS v4、shadcn/ui、React Hook Form + Zod</p></div>
+              <div class="skill-group"><h3>编程语言</h3><p>Python、Node.js、TypeScript、C、Matlab、Cypher、R</p></div>
+              <div class="skill-group"><h3>数据分析与数据库</h3><p>Python 数据分析库、Neo4j、Supabase（PostgreSQL + RLS）、MySQL、Oracle、SQLite、ChromaDB</p></div>
+              <div class="skill-group"><h3>开发环境与工具</h3><p>Linux、WSL2、Git、Vite、Bun、Cloudflare Workers、Claude Code、Cursor、Trae、Codex</p></div>
+              <div class="skill-group"><h3>竞赛与荣誉</h3><ul class="honors"><li>“正大杯”全国大学生市场调查与分析大赛全国三等奖</li><li>美国大学生数学建模竞赛 H 奖、第九届福建省“互联网+”铜奖</li><li>福州大学奖学金、优秀学生干部、优秀共青团员、三星级志愿者（600h+）</li></ul></div>
             </div>
           </section>
         </div>
       </div>
 
       <footer>
-        <span>Last updated: December 25, 2025</span>
+        <span>信息更新：2026 年 6 月</span>
         <span>Built with <a href="https://github.com/xyjoey/PRISM" target="_blank" rel="noopener noreferrer">PRISM</a> 🚀</span>
       </footer>
     </main>
@@ -543,15 +392,15 @@
         const likeButton = document.getElementById('like-button');
 
         let savedTheme = null;
-        try { savedTheme = localStorage.getItem('clancy-theme'); } catch (error) {}
+        try { savedTheme = localStorage.getItem('liao-wang-theme'); } catch (error) {}
         const initialTheme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
         const applyTheme = (theme) => {
           root.dataset.theme = theme;
           themeToggle.textContent = theme === 'dark' ? '☀' : '☾';
-          themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-          themeToggle.title = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
-          try { localStorage.setItem('clancy-theme', theme); } catch (error) {}
+          themeToggle.setAttribute('aria-label', theme === 'dark' ? '切换到浅色模式' : '切换到深色模式');
+          themeToggle.title = theme === 'dark' ? '切换到浅色模式' : '切换到深色模式';
+          try { localStorage.setItem('liao-wang-theme', theme); } catch (error) {}
         };
 
         applyTheme(initialTheme);
@@ -560,27 +409,27 @@
         menuToggle.addEventListener('click', () => {
           const isOpen = mobileLinks.classList.toggle('is-open');
           menuToggle.setAttribute('aria-expanded', String(isOpen));
-          menuToggle.setAttribute('aria-label', isOpen ? 'Close main menu' : 'Open main menu');
+          menuToggle.setAttribute('aria-label', isOpen ? '关闭主菜单' : '打开主菜单');
           menuToggle.textContent = isOpen ? '×' : '☰';
         });
 
         mobileLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
           mobileLinks.classList.remove('is-open');
           menuToggle.setAttribute('aria-expanded', 'false');
-          menuToggle.setAttribute('aria-label', 'Open main menu');
+          menuToggle.setAttribute('aria-label', '打开主菜单');
           menuToggle.textContent = '☰';
         }));
 
         let liked = false;
-        try { liked = localStorage.getItem('clancy-liked') === 'true'; } catch (error) {}
+        try { liked = localStorage.getItem('liao-wang-liked') === 'true'; } catch (error) {}
         const paintLike = () => {
           likeButton.setAttribute('aria-pressed', String(liked));
-          likeButton.textContent = liked ? '♥ Liked' : '♡ Like';
+          likeButton.textContent = liked ? '♥ 已喜欢' : '♡ Like';
         };
         paintLike();
         likeButton.addEventListener('click', () => {
           liked = !liked;
-          try { localStorage.setItem('clancy-liked', String(liked)); } catch (error) {}
+          try { localStorage.setItem('liao-wang-liked', String(liked)); } catch (error) {}
           paintLike();
         });
       })();
