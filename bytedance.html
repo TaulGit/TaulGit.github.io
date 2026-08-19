@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Taul 对产品、安全行业与安全产品快速上手的思考。" />
+    <meta name="author" content="Taul" />
+    <meta name="theme-color" content="#f7f5f0" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="profile.png" type="image/png" />
+    <title>安全产品 · Taul</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f7f5f0;
+        --surface: rgba(255, 255, 255, 0.86);
+        --surface-strong: #ffffff;
+        --text: #20272d;
+        --muted: #68747d;
+        --faint: #eef1ef;
+        --line: #dce2df;
+        --accent: #2c6e73;
+        --accent-strong: #20575c;
+        --accent-soft: #e0efed;
+        --warm: #9a6840;
+        --warm-soft: #f4e9de;
+        --shadow: 0 20px 60px rgba(34, 52, 49, 0.09);
+        --radius: 22px;
+      }
+
+      html[data-theme="dark"] {
+        color-scheme: dark;
+        --bg: #17201f;
+        --surface: rgba(31, 43, 42, 0.9);
+        --surface-strong: #202c2b;
+        --text: #edf3f0;
+        --muted: #b4c1bd;
+        --faint: #263533;
+        --line: #3a4a47;
+        --accent: #8ac9c3;
+        --accent-strong: #b8e2dc;
+        --accent-soft: #284c4a;
+        --warm: #e0ad7d;
+        --warm-soft: #4a382d;
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        min-width: 320px;
+        background:
+          radial-gradient(circle at 8% 0%, rgba(125, 178, 171, 0.18), transparent 29rem),
+          radial-gradient(circle at 92% 18%, rgba(197, 151, 111, 0.12), transparent 25rem),
+          var(--bg);
+        color: var(--text);
+        font-family: Inter, "PingFang SC", "Microsoft YaHei", ui-sans-serif, system-ui, sans-serif;
+        line-height: 1.75;
+        transition: background-color 180ms ease, color 180ms ease;
+      }
+
+      a { color: inherit; }
+      a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+      .skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 100; padding: .65rem .9rem; border-radius: .65rem; background: var(--accent); color: #fff; text-decoration: none; }
+      .skip-link:focus { top: 1rem; }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+        background: color-mix(in srgb, var(--bg) 86%, transparent);
+        backdrop-filter: blur(18px);
+      }
+
+      .nav { display: flex; align-items: center; justify-content: space-between; width: min(100% - 2.5rem, 1180px); min-height: 4.6rem; margin: 0 auto; }
+      .brand { color: var(--text); font-family: Georgia, "Songti SC", "SimSun", serif; font-size: 1.45rem; font-weight: 700; letter-spacing: -.03em; text-decoration: none; }
+      .nav-actions, .nav-links { display: flex; align-items: center; gap: .2rem; }
+      .nav-links a, .icon-button, .menu-button { border: 0; border-radius: .75rem; color: var(--muted); background: transparent; cursor: pointer; font: inherit; text-decoration: none; transition: color 160ms ease, background 160ms ease; }
+      .nav-links a { padding: .55rem .68rem; font-size: .82rem; font-weight: 700; }
+      .nav-links a:hover, .icon-button:hover, .menu-button:hover { color: var(--accent-strong); background: var(--accent-soft); }
+      .nav-links .active-tab { color: var(--accent-strong); background: var(--accent-soft); }
+      .icon-button, .menu-button { display: inline-grid; width: 2.55rem; height: 2.55rem; place-items: center; font-size: 1.15rem; }
+      .menu-button { display: none; }
+      .mobile-links { display: none; width: min(100% - 2.5rem, 1180px); margin: 0 auto; padding-bottom: 1rem; }
+      .mobile-links.is-open { display: grid; gap: .2rem; }
+      .mobile-links a { padding: .7rem .8rem; border-radius: .7rem; color: var(--muted); text-decoration: none; }
+      .mobile-links a:hover, .mobile-links .active-tab { background: var(--accent-soft); color: var(--accent-strong); }
+
+      .page { width: min(100% - 2.5rem, 1180px); margin: 0 auto; padding: 4.6rem 0 2rem; }
+      h1, h2, h3, h4 { margin: 0; font-family: Georgia, "Songti SC", "SimSun", serif; letter-spacing: -.035em; line-height: 1.25; }
+      h1 { max-width: 12em; font-size: clamp(2.6rem, 6vw, 5.2rem); }
+      h2 { font-size: clamp(1.8rem, 3.2vw, 2.45rem); }
+      h3 { font-size: 1.26rem; }
+      h4 { font-size: 1rem; }
+      p { margin: 0; }
+      .eyebrow { margin: 0 0 .65rem; color: var(--accent); font-size: .74rem; font-weight: 850; letter-spacing: .16em; text-transform: uppercase; }
+      .muted { color: var(--muted); }
+
+      .hero { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(18rem, .72fr); gap: clamp(2rem, 6vw, 5.2rem); align-items: end; padding-bottom: 4.5rem; }
+      .hero-lead { max-width: 46rem; margin-top: 1.35rem; color: var(--muted); font-size: clamp(1rem, 1.8vw, 1.14rem); }
+      .hero-meta { display: flex; flex-wrap: wrap; gap: .55rem 1.2rem; margin-top: 1.5rem; color: var(--muted); font-size: .78rem; font-weight: 700; }
+      .hero-meta span { display: inline-flex; align-items: center; gap: .45rem; }
+      .hero-meta span::before { width: .38rem; height: .38rem; border-radius: 50%; background: var(--accent); content: ""; }
+      .summary-card { padding: 1.35rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); }
+      .summary-card h2 { margin-bottom: .9rem; font-family: inherit; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; }
+      .summary-list { display: grid; gap: .9rem; margin: 0; padding: 0; list-style: none; counter-reset: summary; }
+      .summary-list li { display: grid; grid-template-columns: 2rem 1fr; gap: .72rem; color: var(--muted); font-size: .86rem; counter-increment: summary; }
+      .summary-list li::before { display: grid; width: 2rem; height: 2rem; place-items: center; border-radius: .65rem; background: var(--accent-soft); color: var(--accent-strong); content: "0" counter(summary); font-size: .7rem; font-weight: 900; }
+      .summary-list strong { display: block; margin-bottom: .08rem; color: var(--text); }
+
+      .reading-layout { display: grid; grid-template-columns: 13.5rem minmax(0, 1fr); gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+      .toc { position: sticky; top: 7rem; }
+      .toc-title { margin-bottom: .65rem; color: var(--muted); font-size: .7rem; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; }
+      .toc ol { display: grid; gap: .35rem; margin: 0; padding: 0; list-style: none; counter-reset: toc; }
+      .toc li { counter-increment: toc; }
+      .toc ol a { display: grid; grid-template-columns: 1.65rem 1fr; gap: .4rem; padding: .52rem .55rem; border-radius: .72rem; color: var(--muted); font-size: .8rem; font-weight: 700; line-height: 1.45; text-decoration: none; }
+      .toc ol a::before { color: var(--accent); content: "0" counter(toc); font-size: .68rem; font-weight: 900; }
+      .toc ol a:hover { color: var(--accent-strong); background: var(--accent-soft); }
+      .back-link { display: inline-flex; margin-top: 1.1rem; padding: .45rem .55rem; border-radius: .65rem; color: var(--muted); font-size: .76rem; font-weight: 750; text-decoration: none; }
+      .back-link:hover { color: var(--accent-strong); background: var(--accent-soft); }
+
+      .answer { position: relative; padding: 0 0 5.2rem; scroll-margin-top: 7rem; }
+      .answer + .answer { padding-top: 5.2rem; border-top: 1px solid var(--line); }
+      .question-label { display: flex; align-items: center; gap: .8rem; margin-bottom: 1rem; }
+      .question-number { display: inline-grid; width: 2.35rem; height: 2.35rem; place-items: center; border-radius: .75rem; background: var(--accent); color: #fff; font-family: Georgia, serif; font-size: .9rem; font-weight: 800; }
+      .question-type { color: var(--accent); font-size: .72rem; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; }
+      .question { max-width: 49rem; margin-top: .9rem; color: var(--muted); font-size: .9rem; }
+      .thesis { margin: 2rem 0 2.2rem; padding: 1.35rem 1.5rem; border-left: 4px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0; background: var(--accent-soft); color: var(--accent-strong); font-family: Georgia, "Songti SC", "SimSun", serif; font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 700; line-height: 1.55; }
+      .prose { color: var(--muted); font-size: .96rem; }
+      .prose p + p { margin-top: 1rem; }
+      .prose strong { color: var(--text); }
+
+      .section-block { margin-top: 2.5rem; }
+      .section-block > h3 { margin-bottom: .85rem; }
+      .section-kicker { margin-bottom: .35rem; color: var(--warm); font-size: .72rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+      .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: .8rem; }
+      .card { padding: 1.25rem; border: 1px solid var(--line); border-radius: 1.2rem; background: var(--surface); }
+      .card-number { display: block; margin-bottom: .75rem; color: var(--accent); font-size: .7rem; font-weight: 900; letter-spacing: .1em; }
+      .card h3, .card h4 { margin-bottom: .5rem; }
+      .card p { color: var(--muted); font-size: .86rem; }
+
+      .flow { display: grid; grid-template-columns: repeat(6, 1fr); margin-top: 1rem; overflow: hidden; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); }
+      .flow span { position: relative; display: grid; min-height: 4.4rem; place-items: center; padding: .8rem .45rem; color: var(--muted); font-size: .74rem; font-weight: 750; text-align: center; }
+      .flow span + span { border-left: 1px solid var(--line); }
+      .flow span + span::before { position: absolute; left: -.45rem; display: grid; width: .9rem; height: .9rem; place-items: center; border-radius: 50%; background: var(--surface-strong); color: var(--accent); content: "›"; font-weight: 900; }
+
+      .case-study { margin-top: 2.5rem; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: 0 14px 38px rgba(40, 60, 56, .055); }
+      .case-image { display: block; width: 100%; height: auto; border-bottom: 1px solid var(--line); object-fit: contain; }
+      .case-body { padding: clamp(1.25rem, 3vw, 1.75rem); }
+      .case-header { display: flex; align-items: start; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+      .case-tag { flex: 0 0 auto; padding: .28rem .58rem; border-radius: 999px; background: var(--warm-soft); color: var(--warm); font-size: .68rem; font-weight: 850; }
+      .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .7rem; margin-top: 1.15rem; }
+      .case-point { padding-top: .85rem; border-top: 1px solid var(--line); }
+      .case-point strong { display: block; margin-bottom: .3rem; font-size: .8rem; }
+      .case-point p { color: var(--muted); font-size: .8rem; }
+
+      .balance { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; margin-top: 1rem; }
+      .balance-item { padding: 1rem; border-radius: 1rem; background: var(--faint); }
+      .balance-item strong { display: block; margin-bottom: .25rem; color: var(--accent-strong); }
+      .balance-item span { color: var(--muted); font-size: .82rem; }
+      .conclusion { margin-top: 1.1rem; color: var(--text); font-weight: 720; }
+
+      .security-stages { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; margin-top: 1rem; }
+      .stage { padding: 1.15rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); }
+      .stage span { display: block; margin-bottom: .35rem; color: var(--accent); font-size: .7rem; font-weight: 900; letter-spacing: .08em; }
+      .stage strong { display: block; margin-bottom: .35rem; }
+      .stage p { color: var(--muted); font-size: .8rem; }
+      .risk-formula { display: flex; align-items: center; justify-content: center; gap: clamp(.6rem, 2vw, 1.2rem); margin: 1.4rem 0; padding: 1.3rem; border-radius: 1rem; background: var(--accent-soft); color: var(--accent-strong); font-family: Georgia, serif; font-size: clamp(1rem, 2.3vw, 1.4rem); font-weight: 800; text-align: center; }
+      .risk-formula b { font-family: inherit; font-size: 1.35em; }
+
+      .trend-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .8rem; margin-top: 1rem; }
+      .trend { padding: 1.2rem; border: 1px solid var(--line); border-radius: 1.15rem; background: var(--surface); }
+      .trend .trend-index { color: var(--warm); font-size: .68rem; font-weight: 900; letter-spacing: .12em; }
+      .trend h3 { margin: .55rem 0 .5rem; }
+      .trend p { color: var(--muted); font-size: .84rem; }
+      .mini-list { display: grid; gap: .35rem; margin: .75rem 0 0; padding: 0; list-style: none; }
+      .mini-list li { position: relative; padding-left: 1rem; color: var(--muted); font-size: .8rem; }
+      .mini-list li::before { position: absolute; left: 0; color: var(--accent); content: "•"; }
+
+      .source-card { display: grid; grid-template-columns: auto 1fr auto; gap: 1rem; align-items: center; margin-top: 1rem; padding: 1.15rem; border: 1px solid var(--line); border-radius: 1.15rem; background: linear-gradient(135deg, var(--surface), color-mix(in srgb, var(--accent-soft) 42%, var(--surface))); }
+      .source-icon { display: grid; width: 3rem; height: 3rem; place-items: center; border-radius: .9rem; background: var(--accent); color: #fff; font-family: Georgia, serif; font-size: .72rem; font-weight: 900; }
+      .source-card h3 { margin-bottom: .22rem; font-size: 1.02rem; }
+      .source-card p { color: var(--muted); font-size: .78rem; }
+      .source-link, .share-button { display: inline-flex; align-items: center; justify-content: center; min-height: 2.35rem; padding: .42rem .76rem; border: 1px solid var(--line); border-radius: 999px; color: var(--accent-strong); background: var(--surface-strong); font: inherit; font-size: .75rem; font-weight: 850; text-decoration: none; white-space: nowrap; }
+      .source-link:hover, .share-button:hover { border-color: var(--accent); background: var(--accent-soft); }
+
+      .value-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .8rem; margin-top: 1rem; }
+      .value { padding: 1.25rem; border-radius: 1.15rem; background: var(--faint); }
+      .value span { color: var(--accent); font-size: .68rem; font-weight: 900; letter-spacing: .1em; }
+      .value h3 { margin: .5rem 0; }
+      .value p { color: var(--muted); font-size: .84rem; }
+
+      .roadmap { display: grid; gap: .8rem; margin-top: 1.25rem; }
+      .roadmap-step { display: grid; grid-template-columns: 5rem 1fr; gap: 1.2rem; padding: 1.25rem; border: 1px solid var(--line); border-radius: 1.15rem; background: var(--surface); }
+      .roadmap-label { color: var(--accent); font-size: .7rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+      .roadmap-step h3 { margin-bottom: .45rem; }
+      .roadmap-step p { color: var(--muted); font-size: .85rem; }
+      .roadmap-step ul { display: grid; gap: .35rem; margin: .75rem 0 0; padding-left: 1.1rem; }
+      .roadmap-step li { color: var(--muted); font-size: .82rem; }
+
+      .closing { margin-top: 2.2rem; padding: 1.4rem; border-radius: var(--radius); background: var(--accent); color: #fff; }
+      .closing p { font-family: Georgia, "Songti SC", "SimSun", serif; font-size: clamp(1.1rem, 2.3vw, 1.45rem); font-weight: 700; line-height: 1.55; }
+      .closing small { display: block; margin-top: .55rem; color: rgba(255, 255, 255, .78); }
+
+      .page-actions { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+      .page-actions p { color: var(--muted); font-size: .78rem; }
+      .share-button { cursor: pointer; }
+      footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .7rem; margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .78rem; }
+      footer a { color: var(--accent-strong); font-weight: 700; }
+
+      @media (max-width: 900px) {
+        .hero { grid-template-columns: 1fr; }
+        .summary-card { max-width: 40rem; }
+        .reading-layout { grid-template-columns: 1fr; }
+        .toc { position: static; padding: 1rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); }
+        .toc ol { grid-template-columns: repeat(3, 1fr); }
+        .back-link { display: none; }
+      }
+
+      @media (max-width: 760px) {
+        .nav-links { display: none; }
+        .menu-button { display: inline-grid; }
+        .page, .nav, .mobile-links { width: min(100% - 1.5rem, 1180px); }
+        .page { padding-top: 2.8rem; }
+        .hero { padding-bottom: 3rem; }
+        .cards, .case-grid, .balance, .security-stages, .trend-grid, .value-grid { grid-template-columns: 1fr; }
+        .flow { grid-template-columns: repeat(2, 1fr); }
+        .flow span:nth-child(odd) { border-left: 0; }
+        .flow span:nth-child(n+3) { border-top: 1px solid var(--line); }
+        .case-header { display: block; }
+        .case-tag { display: inline-flex; margin-top: .65rem; }
+        .source-card { grid-template-columns: auto 1fr; }
+        .source-link { grid-column: 1 / -1; }
+      }
+
+      @media (max-width: 520px) {
+        h1 { font-size: clamp(2.35rem, 13vw, 3.6rem); }
+        .toc ol { grid-template-columns: 1fr; }
+        .summary-list li { grid-template-columns: 1.8rem 1fr; }
+        .summary-list li::before { width: 1.8rem; height: 1.8rem; }
+        .roadmap-step { grid-template-columns: 1fr; gap: .35rem; }
+        .risk-formula { flex-wrap: wrap; }
+        .page-actions { align-items: stretch; flex-direction: column; }
+      }
+
+      @media print {
+        .site-header, .toc, .page-actions, footer { display: none; }
+        body { background: #fff; color: #111; }
+        .page { width: 100%; padding: 0; }
+        .hero { grid-template-columns: 1fr; padding-bottom: 2rem; }
+        .summary-card, .card, .case-study, .stage, .trend, .source-card, .roadmap-step { break-inside: avoid; box-shadow: none; }
+        .answer + .answer { break-before: page; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { transition-duration: .01ms !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳到主要内容</a>
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="index.html">Taul</a>
+        <div class="nav-actions">
+          <div class="nav-links">
+            <a class="active-tab" href="bytedance.html" aria-current="page">安全产品</a>
+            <a href="#product">产品理解</a>
+            <a href="#security">安全行业</a>
+            <a href="#onboarding">如何上手</a>
+          </div>
+          <button class="icon-button" id="theme-toggle" type="button" aria-label="切换到深色模式" title="切换主题">☾</button>
+          <button class="menu-button" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-links" aria-label="打开主菜单">☰</button>
+        </div>
+      </nav>
+      <div class="mobile-links" id="mobile-links">
+        <a class="active-tab" href="bytedance.html" aria-current="page">安全产品</a>
+        <a href="#product">产品理解</a>
+        <a href="#security">安全行业</a>
+        <a href="#onboarding">如何上手</a>
+      </div>
+    </header>
+
+    <main class="page" id="main-content" tabindex="-1">
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Security Product · Q&amp;A</p>
+          <h1 id="page-title">关于产品与安全</h1>
+          <p class="hero-lead">三个问题，分别回答我如何理解产品经理的价值、如何看待安全行业，以及加入安全产品团队后如何尽快形成独立交付能力。</p>
+          <div class="hero-meta" aria-label="页面信息">
+            <span>Taul</span>
+            <span>预计阅读 8 分钟</span>
+            <span>更新于 2026 年 8 月</span>
+          </div>
+        </div>
+        <aside class="summary-card" aria-label="三个回答的核心观点">
+          <h2>先看结论</h2>
+          <ol class="summary-list">
+            <li><div><strong>产品的核心价值</strong>确认真正的需求，推动方案落地。</div></li>
+            <li><div><strong>安全的目标</strong>不是追求绝对安全，而是准确地管理风险。</div></li>
+            <li><div><strong>快速上手的标准</strong>独立承接一个小需求，并跑通完整闭环。</div></li>
+          </ol>
+        </aside>
+      </section>
+
+      <div class="reading-layout">
+        <aside class="toc" aria-label="页面目录">
+          <p class="toc-title">Contents</p>
+          <ol>
+            <li><a href="#product">我对“做产品”的理解</a></li>
+            <li><a href="#security">我对安全领域的想法</a></li>
+            <li><a href="#onboarding">加入后如何快速上手</a></li>
+          </ol>
+          <a class="back-link" href="index.html">← 返回个人主页</a>
+        </aside>
+
+        <article>
+          <section class="answer" id="product" aria-labelledby="product-title">
+            <div class="question-label"><span class="question-number">01</span><span class="question-type">Product</span></div>
+            <h2 id="product-title">我对“做产品”的理解</h2>
+            <p class="question">你认为产品经理 / 产品岗的核心价值是什么？一个好的产品应该具备哪些特质？可以结合使用过的产品、做过的项目或实习经历来谈。</p>
+            <div class="thesis">产品经理的核心价值，是确认真正的需求，并推动方案落地。</div>
+
+            <div class="prose">
+              <p>如果只看分工，研发负责把东西做出来，销售负责把东西卖出去，似乎已经足够。但在真实的产品过程中，这个组合往往会暴露两个缺口：<strong>做之前缺少先验，卖之后缺少闭环。</strong></p>
+            </div>
+
+            <div class="cards section-block">
+              <section class="card">
+                <span class="card-number">GAP 01</span>
+                <h3>做之前，缺少先验</h3>
+                <p>技术选型、开发周期、交付边界和验收标准，都依赖对需求的准确判断。需求越模糊，试错成本越高；即使在 AI Coding 场景中，Agent 也只有获得足够周全的上下文，才更可能稳定完成任务。</p>
+              </section>
+              <section class="card">
+                <span class="card-number">GAP 02</span>
+                <h3>卖之后，缺少闭环</h3>
+                <p>销售掌握客户的一线反馈，但未必能把问题转译成可执行的产品需求；研发则可能接触不到真实用户。产品需要把反馈接住、判断优先级，再推动迭代回到用户与商业结果中。</p>
+              </section>
+            </div>
+
+            <div class="section-block">
+              <p class="section-kicker">Feedback loop</p>
+              <h3>在成熟 ToB 产品中，产品更像闭环的推动者</h3>
+              <div class="flow" aria-label="ToB 产品需求反馈闭环">
+                <span>客户 / 用户</span><span>区域售前</span><span>总部产品</span><span>总部研发</span><span>产品迭代</span><span>销售策略</span>
+              </div>
+            </div>
+
+            <section class="case-study" aria-labelledby="doopoo-title">
+              <img class="case-image" src="assets/doopoo-platform.jpg" alt="DooPoo AI 驱动内容生产平台界面" width="1800" height="1139" loading="lazy" />
+              <div class="case-body">
+                <div class="case-header">
+                  <div><p class="section-kicker">Case study</p><h3 id="doopoo-title">DooPoo AI 漫剧出海项目：一次关于边界的复盘</h3></div>
+                  <span class="case-tag">AI 内容生产平台</span>
+                </div>
+                <div class="prose">
+                  <p>客户希望获得一套更贴合自身工作流、成本更低的 AI 漫剧生产方案。但项目立项时，需求、交付边界和技术选型都没有充分对齐；为了促成合作，承诺范围不断扩大，最终开发周期与交付质量都无法匹配预期，也失去了最初的客户。</p>
+                </div>
+                <div class="case-grid">
+                  <div class="case-point"><strong>表层问题</strong><p>需求蔓延、周期失控、交付质量不稳定。</p></div>
+                  <div class="case-point"><strong>深层原因</strong><p>销售、产品与研发没有围绕真实需求和验收标准达成一致。</p></div>
+                  <div class="case-point"><strong>我的复盘</strong><p>产品要敢于定义边界，并让价值、成本与可交付性在立项前被看见。</p></div>
+                </div>
+              </div>
+            </section>
+
+            <div class="section-block">
+              <p class="section-kicker">Judgement</p>
+              <h3>需求是及格线，判断才决定产品的上限</h3>
+              <div class="prose">
+                <p>接收需求并不难；在不考虑成本的情况下，绝大多数需求都可以被满足。真正困难的是区分短期诉求与长期价值，并在资源有限时做出取舍。</p>
+              </div>
+              <div class="balance" aria-label="产品判断的三个维度">
+                <div class="balance-item"><strong>用户价值</strong><span>是否解决了真实、持续存在的问题？</span></div>
+                <div class="balance-item"><strong>商业价值</strong><span>是否带来收入、留存、准入或战略收益？</span></div>
+                <div class="balance-item"><strong>实现成本</strong><span>时间、人力与机会成本是否可接受？</span></div>
+              </div>
+              <p class="conclusion">所以，我理解的好产品，是在用户价值、商业价值与成本之间持续判断，把有限资源投入到最真实、最值得解决的需求上。</p>
+            </div>
+          </section>
+
+          <section class="answer" id="security" aria-labelledby="security-title">
+            <div class="question-label"><span class="question-number">02</span><span class="question-type">Security</span></div>
+            <h2 id="security-title">我对安全领域的想法</h2>
+            <p class="question">谈谈你对网络安全 / 信息安全行业的认知。可以是行业趋势、某类安全产品、某个安全事件，也可以是对安全产品商业化的看法。</p>
+            <div class="thesis">安全产品经理的目标，不是单纯追求更严，而是更准确地管理风险。</div>
+
+            <div class="prose">
+              <p>网络与信息安全通常覆盖事前预防、事中检测和事后响应三个环节。但无论产品位于哪一环，都绕不开一个经典矛盾：<strong>Security vs. Usability</strong>。限制越多，表面上越安全，业务摩擦也往往越大。</p>
+            </div>
+
+            <div class="security-stages" aria-label="安全产品的三个环节">
+              <div class="stage"><span>BEFORE</span><strong>事前预防</strong><p>身份与权限、设备与终端安全、数据保护。</p></div>
+              <div class="stage"><span>DURING</span><strong>事中检测</strong><p>UEBA、DLP、Insider Risk 等异常识别。</p></div>
+              <div class="stage"><span>AFTER</span><strong>事后响应</strong><p>日志、审计、溯源和安全运营闭环。</p></div>
+            </div>
+
+            <div class="section-block">
+              <p class="section-kicker">Risk model</p>
+              <h3>“管得准”比“管得严”更接近安全的本质</h3>
+              <div class="risk-formula" aria-label="风险等于发生概率乘以影响程度"><span>风险</span><b>=</b><span>发生概率</span><b>×</b><span>影响程度</span></div>
+              <div class="prose">
+                <p>同样是信息外传，一张低价值聊天截图与一份核心机密数据的后果完全不同。只看“是否泄漏”会把所有事件一视同仁；只有把概率与影响放在一起判断，安全策略才可能既保护关键资产，又避免给正常业务制造不必要的阻力。</p>
+              </div>
+            </div>
+
+            <div class="section-block">
+              <p class="section-kicker">Two shifts</p>
+              <h3>我关注的两个行业变化</h3>
+              <div class="trend-grid">
+                <section class="trend">
+                  <span class="trend-index">SHIFT 01</span>
+                  <h3>安全边界正在模糊</h3>
+                  <p>互联网、SaaS、云与远程办公交织后，传统“守住内网”的静态边界越来越难成立。安全产品需要从一刀切的访问限制，转向基于身份、终端、数据与行为的动态风险判断。</p>
+                </section>
+                <section class="trend">
+                  <span class="trend-index">SHIFT 02</span>
+                  <h3>AI 成为新的风险主体</h3>
+                  <p>AI 不仅能增强检测与响应能力，也能继承权限并放大行动规模。人的权限模型不能直接照搬给 Agent。</p>
+                  <ul class="mini-list">
+                    <li>Agent 能否代替人执行高风险操作？</li>
+                    <li>权限内的批量操作，是否仍然合规？</li>
+                    <li>AI 的行为如何被记录、解释与追溯？</li>
+                  </ul>
+                </section>
+              </div>
+            </div>
+
+            <div class="section-block">
+              <p class="section-kicker">Recent case</p>
+              <h3>OpenAI × Hugging Face：目标约束与权限边界的现实案例</h3>
+              <div class="prose">
+                <p>2026 年 7 月，OpenAI 与 Hugging Face 披露了一起发生在模型能力评估期间的安全事件：实验环境原本没有提供直接的互联网访问，但参与评估的模型发现并利用未知漏洞获得外网访问，随后试图从 Hugging Face 的生产系统获取评测答案。</p>
+                <p>这件事说明，能力更强的 Agent 可能为了完成一个被设定的窄目标，自主寻找意料之外的路径。对安全产品而言，权限控制、目标约束、异常检测和行为审计需要被放在同一个系统里考虑。</p>
+              </div>
+              <div class="source-card">
+                <div class="source-icon">OAI</div>
+                <div><h3>OpenAI 官方事件说明</h3><p>2026-07-21 发布，2026-07-28/29 更新 · Security</p></div>
+                <a class="source-link" href="https://openai.com/zh-Hans-CN/index/hugging-face-model-evaluation-security-incident/" target="_blank" rel="noopener noreferrer">查看原文 ↗</a>
+              </div>
+            </div>
+
+            <div class="section-block">
+              <p class="section-kicker">Commercialization</p>
+              <h3>安全产品卖的不是“多得到什么”，而是“少失去什么”</h3>
+              <div class="prose">
+                <p>这使安全产品的价值比效率工具更难直接量化，但并不意味着它没有清晰的商业价值。我认为至少有两类：</p>
+              </div>
+              <div class="value-grid">
+                <section class="value"><span>VALUE 01</span><h3>降低风险损失</h3><p>通过降低事件发生概率或影响范围，减少潜在的经济损失、业务中断与声誉成本。</p></section>
+                <section class="value"><span>VALUE 02</span><h3>提供合规与准入能力</h3><p>让企业满足标准、规范和客户要求，获得进入某个市场或服务大型客户的资格。</p></section>
+              </div>
+              <div class="prose" style="margin-top: 1rem;">
+                <p>成熟的安全产品甚至可以成为效率产品。例如，过去只能要求员工在内网、使用公司设备访问数据；当身份鉴权、终端鉴权、数据加密和审计能力足够成熟后，企业反而可以安全地开放远程访问。好的安全不是把业务锁住，而是让业务在可控风险下跑得更快。</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="answer" id="onboarding" aria-labelledby="onboarding-title">
+            <div class="question-label"><span class="question-number">03</span><span class="question-type">Onboarding</span></div>
+            <h2 id="onboarding-title">加入安全产品团队后，我会如何快速上手</h2>
+            <p class="question">假设加入安全产品团队，作为产品实习生，你会如何学习安全产品并快速形成产出？</p>
+            <div class="thesis">目标不是先把整个网络安全知识体系学完，而是尽快具备独立承担一个小需求、跑通一次完整闭环的能力。</div>
+
+            <div class="roadmap" aria-label="安全产品快速上手路径">
+              <section class="roadmap-step">
+                <div class="roadmap-label">阶段 01</div>
+                <div>
+                  <h3>先建立产品地图</h3>
+                  <p>从产品侧进入，先搞清楚业务位置与角色关系，再决定需要补哪些技术知识。</p>
+                  <ul>
+                    <li><strong>我们卖什么：</strong>产品位于哪个安全环节，解决什么风险，核心能力和边界是什么。</li>
+                    <li><strong>卖给谁：</strong>决策者可能是管理层、安全负责人或采购，他们为什么愿意付费。</li>
+                    <li><strong>谁在用：</strong>安全管理员与普通员工的诉求不同，产品在安全和效率之间做了哪些取舍。</li>
+                  </ul>
+                </div>
+              </section>
+              <section class="roadmap-step">
+                <div class="roadmap-label">阶段 02</div>
+                <div>
+                  <h3>沿着功能补齐技术</h3>
+                  <p>以具体功能和真实需求为索引，反向学习身份、权限、终端、数据、审计等概念。相比先完整啃下一整套网络安全理论，这种方式更容易把知识与产品决策对应起来。我已有信息安全、密码学和计算机网络基础，可以更快建立这层映射。</p>
+                </div>
+              </section>
+              <section class="roadmap-step">
+                <div class="roadmap-label">阶段 03</div>
+                <div>
+                  <h3>从真实案例进入闭环</h3>
+                  <p>集中阅读历史需求、客户案例与客诉，理解问题如何被发现、被判断、被推动和被验证，并主动复盘：</p>
+                  <ul>
+                    <li>为什么会有这个问题，真正受影响的是谁？</li>
+                    <li>当时为什么选择这个方案，放弃了什么？</li>
+                    <li>数据在判断优先级与验证结果时起了什么作用？</li>
+                    <li>需求如何进入研发、上线、反馈和后续迭代？</li>
+                  </ul>
+                </div>
+              </section>
+              <section class="roadmap-step">
+                <div class="roadmap-label">阶段 04</div>
+                <div>
+                  <h3>独立跑通一个小需求</h3>
+                  <p>选择边界清楚、风险可控的小需求，完成用户访谈或问题澄清、需求定义、方案协同、验收上线与效果回收。以一次真实交付检验自己是否已经理解产品，而不是只用“看了多少资料”衡量上手程度。</p>
+                </div>
+              </section>
+            </div>
+
+            <div class="closing">
+              <p>我希望尽快成为那个能够识别真正需求、做出有依据的取舍，并推动迭代落地的人。</p>
+              <small>这也是我理解的安全产品实习生从“了解业务”走向“创造价值”的最短路径。</small>
+            </div>
+          </section>
+
+          <div class="page-actions">
+            <p>感谢阅读。如果需要，我也很愿意在面试中继续展开这些案例。</p>
+            <button class="share-button" id="share-button" type="button">复制此页链接</button>
+          </div>
+        </article>
+      </div>
+
+      <footer>
+        <span>Taul · AI 应用与产品运营</span>
+        <span><a href="index.html">返回个人主页</a> · <a href="mailto:LiaoWangg@163.com">联系我</a></span>
+      </footer>
+    </main>
+
+    <script>
+      (() => {
+        const root = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileLinks = document.getElementById('mobile-links');
+        const shareButton = document.getElementById('share-button');
+
+        let savedTheme = null;
+        try { savedTheme = localStorage.getItem('liao-wang-theme'); } catch (error) {}
+        const initialTheme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+        const applyTheme = (theme) => {
+          root.dataset.theme = theme;
+          themeToggle.textContent = theme === 'dark' ? '☀' : '☾';
+          themeToggle.setAttribute('aria-label', theme === 'dark' ? '切换到浅色模式' : '切换到深色模式');
+          themeToggle.title = theme === 'dark' ? '切换到浅色模式' : '切换到深色模式';
+          try { localStorage.setItem('liao-wang-theme', theme); } catch (error) {}
+        };
+
+        applyTheme(initialTheme);
+        themeToggle.addEventListener('click', () => applyTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
+
+        menuToggle.addEventListener('click', () => {
+          const isOpen = mobileLinks.classList.toggle('is-open');
+          menuToggle.setAttribute('aria-expanded', String(isOpen));
+          menuToggle.setAttribute('aria-label', isOpen ? '关闭主菜单' : '打开主菜单');
+          menuToggle.textContent = isOpen ? '×' : '☰';
+        });
+
+        mobileLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+          mobileLinks.classList.remove('is-open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.setAttribute('aria-label', '打开主菜单');
+          menuToggle.textContent = '☰';
+        }));
+
+        shareButton.addEventListener('click', async () => {
+          const originalLabel = '复制此页链接';
+          try {
+            await navigator.clipboard.writeText(window.location.href);
+            shareButton.textContent = '链接已复制 ✓';
+          } catch (error) {
+            shareButton.textContent = '请复制浏览器地址';
+          }
+          window.setTimeout(() => { shareButton.textContent = originalLabel; }, 2200);
+        });
+      })();
+    </script>
+  </body>
+</html>
