@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RouteAI 项目案例：基于 LangGraph 的多 Agent 旅行规划，包含并行取证、持久中断恢复、约束修复与可回放的离线执行记录。" />
+  <meta name="theme-color" content="#f7f5f0" />
+  <meta property="og:title" content="RouteAI · 可恢复的多 Agent 旅行规划 — Taul" />
+  <meta property="og:description" content="把旅行规划做成有来源、可检查、可继续的过程。查看设计选择与真实离线执行记录。" />
+  <meta property="og:image" content="https://taulgit.github.io/assets/routeai-cover.svg" />
+  <link rel="canonical" href="https://taulgit.github.io/portfolio/routeai.html" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../assets/portfolio.css" />
+  <script src="../assets/portfolio.js" defer></script>
+  <title>RouteAI · 可恢复的多 Agent 旅行规划 — Taul</title>
+</head>
+<body data-demo-src="../assets/routeai-demo.json">
+  <a class="skip-link" href="#main">跳到案例内容</a>
+  <header class="site-header"><nav class="site-nav container" aria-label="主导航">
+    <a class="brand" href="../index.html">Taul<span>AI APPLICATIONS &amp; PRODUCT</span></a>
+    <div class="nav-links"><a href="../index.html">个人主页</a><a href="../portfolio.html" aria-current="page">作品集</a><a class="github-nav" href="https://github.com/TaulGit/Route-AI" target="_blank" rel="noopener noreferrer">源码 ↗</a><button class="theme-button" type="button" id="theme-toggle" aria-label="切换到深色模式" title="切换主题">☾</button></div>
+  </nav></header>
+  <main class="container" id="main">
+    <nav class="breadcrumb" aria-label="面包屑导航"><a href="../portfolio.html">精选作品</a><span aria-hidden="true">/</span><span>01 · RouteAI</span></nav>
+    <section class="case-hero" aria-labelledby="case-title">
+      <div><p class="eyebrow">A travel planning agent</p><h1 id="case-title">Route<span>AI</span></h1><p class="subheading">好的行程，<br />应该经得起检查，也能接着规划。</p></div>
+      <div><p class="lead">从一次性的行程回答，到有来源、可审核、能恢复的旅行工作流。这次重构聚焦 Agent 在真实产品中需要面对的决策、约束与中断。</p><div class="action-row"><a class="button" href="#recording">回放离线示例 <span aria-hidden="true">↓</span></a><a class="text-link" href="https://github.com/TaulGit/Route-AI" target="_blank" rel="noopener noreferrer">查看源码 <span aria-hidden="true">↗</span></a></div></div>
+    </section>
+    <dl class="case-meta"><div><dt>Project</dt><dd>同城一日游规划</dd></div><div><dt>Practice</dt><dd>Agent 编排 · 全栈实现</dd></div><div><dt>Timeline</dt><dd>2026.03–06 / 10 月重构</dd></div><div><dt>Stack</dt><dd>LangGraph · FastAPI · Vue 3</dd></div></dl>
+    <figure class="case-cover"><img src="../assets/routeai-cover.svg" alt="RouteAI 产品示意，路线工作台与 Agent 编排状态" width="1200" height="750" fetchpriority="high" /></figure>
+    <div class="cover-caption"><span>工作台视觉示意 · 交互执行记录见下方回放</span><span>01 / AI APPLICATION ENGINEERING</span></div>
+
+    <section class="case-section" id="problem" aria-labelledby="problem-title">
+      <div class="section-label"><span class="section-index">01</span><h2>从什么问题出发</h2><p class="eyebrow">The question</p></div>
+      <div class="section-content"><h2 id="problem-title">生成一份行程之后，<br />规划才真正开始。</h2><p class="lead">旅行需求经常不完整，工具也会返回空结果。用户可能临时改预算，或关掉页面后再回来。系统需要知道目前掌握了什么、哪些约束尚未满足，以及接下来该由谁决定。</p>
+        <div class="problem-points"><div class="problem-point"><h3>推荐，有没有依据？</h3><p>让地点来自检索证据，禁止模型用没有检索到的 POI 补齐行程。</p></div><div class="problem-point"><h3>条件，能不能满足？</h3><p>把地点、时长和估算费用交给代码校验，让失败产生可执行的修复反馈。</p></div><div class="problem-point"><h3>中断，能不能继续？</h3><p>把需求澄清与人工审核变成真正的持久暂停，而不是一个等待状态标签。</p></div></div>
+      </div>
+    </section>
+
+    <section class="case-section" id="approach" aria-labelledby="approach-title">
+      <div class="section-label"><span class="section-index">02</span><h2>让自主性有边界</h2><p class="eyebrow">The approach</p></div>
+      <div class="section-content"><h2 id="approach-title">模型负责选择，<br />工作流负责把事情接住。</h2><p class="lead">外层状态图确定阶段和终态；研究 Agent 在各自上下文里根据工具结果决定检索词、是否重试和何时停止。两者配合，让系统既能决策，也能被检查。</p>
+        <div class="architecture-flow" aria-label="工作流：需求澄清、并行取证、结构化提案、约束校验、用户审核"><div class="flow-step"><span class="flow-no">01</span><h3>需求澄清</h3><p>缺少必要信息<br /><code>interrupt</code></p></div><div class="flow-step"><span class="flow-no">02</span><h3>并行取证</h3><p>独立工具循环<br /><code>Send + reducer</code></p></div><div class="flow-step"><span class="flow-no">03</span><h3>行程提案</h3><p>只引用已有地点<br /><code>Pydantic</code></p></div><div class="flow-step"><span class="flow-no">04</span><h3>约束校验</h3><p>失败最多修复两次<br /><code>validate → repair</code></p></div><div class="flow-step"><span class="flow-no">05</span><h3>用户审核</h3><p>确认、修改或结束<br /><code>Command resume</code></p></div></div>
+        <div class="decision-list"><div class="decision-row"><h3>独立研究，有界工具决策</h3><p>主管把需求拆为最多 3 个任务，通过 <code>Send</code> 动态分发。每个研究 Agent 最多 3 次模型尝试和 3 次工具尝试，允许在空结果或异常后改词检索，结果按来源归并。</p></div><div class="decision-row"><h3>结构正确，再检查事实</h3><p>结构化输出只约束数据形状。校验器继续检查 POI 引用、重复地点、连续路段、时长与估算预算；不满足时反馈具体问题，达到修复上限则如实结束。</p></div><div class="decision-row"><h3>把暂停保存下来</h3><p>SQLite Checkpointer 留存图状态，<code>interrupt / Command</code> 连接补充需求与审核。页面刷新读取服务端快照；进程重启从检查点继续。对外部只读请求，承认故障后可能重放。</p></div></div>
+      </div>
+    </section>
+
+    <section class="case-section" id="recording" aria-labelledby="recording-title">
+      <div class="section-label"><span class="section-index">03</span><h2>看看它如何工作</h2><p class="eyebrow">Recorded example</p></div>
+      <div class="section-content"><h2 id="recording-title">一份武汉行程，<br />从需求到确认的执行记录。</h2><p class="lead">以下回放读取真实后端在固定示例数据上的一次离线执行记录。可以逐阶段查看输入、证据、提案和事件；这里不运行模型、不查询实时地图，也不会创建新的行程。</p>
+        <div class="replay-shell" id="replay" aria-busy="true">
+          <div class="replay-header"><div class="replay-label"><span class="recording-dot" aria-hidden="true"></span>离线执行记录 · 手动回放</div><small>固定武汉示例<br />非实时模型 / 地图调用</small></div>
+          <div class="replay-steps" role="group" aria-label="选择回放阶段"><button class="replay-step" type="button" data-stage="0" aria-pressed="true" disabled><span>01</span>需求</button><button class="replay-step" type="button" data-stage="1" aria-pressed="false" disabled><span>02</span>取证</button><button class="replay-step" type="button" data-stage="2" aria-pressed="false" disabled><span>03</span>提案</button><button class="replay-step" type="button" data-stage="3" aria-pressed="false" disabled><span>04</span>校验</button><button class="replay-step" type="button" data-stage="4" aria-pressed="false" disabled><span>05</span>确认</button></div>
+          <div class="replay-body" id="replay-body"><div class="replay-detail"><h3 id="replay-title">正在载入执行记录</h3><p class="replay-description" id="replay-description">载入后可按阶段查看后端保存的结果与事件。</p><div class="replay-context" id="replay-context"></div><div class="replay-facts" id="replay-facts"></div><ol class="replay-route" id="replay-route" aria-label="当前阶段的地点"></ol></div><aside class="replay-trace" aria-label="实际节点事件"><div class="trace-heading">节点事件 <span>RECORDED TRACE</span></div><ol class="trace-list" id="trace-list"><li class="trace-empty">等待执行记录。</li></ol></aside></div>
+          <p class="load-error" id="replay-error" role="status" hidden></p>
+          <div class="replay-controls"><button class="button secondary" id="play-recording" type="button" disabled>顺序回放 <span aria-hidden="true">▷</span></button><p class="replay-status" id="replay-status" aria-live="polite">正在载入离线记录…</p><div class="replay-control-group"><button class="step-arrow" id="previous-stage" type="button" aria-label="上一个回放阶段" disabled>←</button><span class="replay-position" id="replay-position">1 / 5</span><button class="step-arrow" id="next-stage" type="button" aria-label="下一个回放阶段" disabled>→</button></div></div>
+          <noscript><p class="no-script">需要 JavaScript 才能回放记录。项目机制、验证结果与源码链接仍可在本页阅读。</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section" id="evidence" aria-labelledby="evidence-title">
+      <div class="section-label"><span class="section-index">04</span><h2>让结论有证据</h2><p class="eyebrow">What was verified</p></div>
+      <div class="section-content"><h2 id="evidence-title">除了演示，<br />还要能重复检查。</h2><p class="lead">验证覆盖真实 LangGraph 调度、工具协议、确定性约束和持久运行器。测试中的模型与地图使用 fake / fixture，验证编排与异常处理，不把它包装成线上推荐效果。</p>
+        <div class="evidence-strip" aria-label="2026年10月26日本地离线验证结果"><div class="evidence-number"><strong>56</strong><span>自动化测试通过</span></div><div class="evidence-number"><strong>17 / 17</strong><span>离线场景通过</span></div><div class="evidence-number"><strong>109 / 109</strong><span>场景检查通过</span></div></div>
+        <ul class="evidence-notes"><li>用并行屏障验证多个研究 worker 同时到达，检查动态分发与结果归并。</li><li>用两次独立 Python 进程读取同一 SQLite 检查点，接续审核原提案。</li><li>覆盖空结果、工具超时、未知 POI、超预算、超时长、修复上限与旧审核提交。</li><li>本地浏览器完成生成、刷新恢复和确认；关闭 SSE 消费者后，后台任务继续。</li></ul>
+        <a class="text-link" href="https://github.com/TaulGit/Route-AI/blob/main/docs/verification.md" target="_blank" rel="noopener noreferrer">查看验收记录 <span aria-hidden="true">↗</span></a>
+        <div class="limits"><strong>成立的范围，也需要写清楚。</strong><p>当前是单进程 SQLite 方案。实时模型、高德与 Supabase 的网络集成尚未验收；门票、用餐和交通含估算，未验证开放时间、预约与起终点接驳。离线通过不代表线上成功率，也不保证实际出行费用。</p></div>
+      </div>
+    </section>
+
+    <section class="case-section" aria-labelledby="next-title"><div class="section-label"><span class="section-index">05</span><h2>继续深入</h2><p class="eyebrow">Explore the project</p></div><div class="section-content closing"><h2 id="next-title">从可观看的案例，<br />到可复现的实现。</h2><p class="lead">代码、架构取舍、离线评测和启动方式都保存在项目仓库。下一步是配置真实服务并建立有预算的集成评测，再用结果决定哪些能力值得继续增加。</p><div class="action-row"><a class="button" href="https://github.com/TaulGit/Route-AI" target="_blank" rel="noopener noreferrer">打开项目仓库 <span aria-hidden="true">↗</span></a><a class="button secondary" href="https://github.com/TaulGit/Route-AI/blob/main/docs/architecture.md" target="_blank" rel="noopener noreferrer">阅读架构说明 <span aria-hidden="true">↗</span></a></div></div></section>
+  </main>
+  <footer class="site-footer container"><span>RouteAI · 2026 年 10 月重构记录</span><a href="../portfolio.html">← 返回精选作品</a></footer>
+</body>
+</html>

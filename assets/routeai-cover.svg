@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-labelledby="title desc">
+  <title id="title">RouteAI · 路线与工作流示意</title>
+  <desc id="desc">米白与深蓝的旅行工作台，三个编号路线节点连接一份行程卡，右侧展示规划、校验、确认的阶段。</desc>
+  <defs>
+    <pattern id="grid" width="52" height="52" patternUnits="userSpaceOnUse"><path d="M52 0H0V52" fill="none" stroke="#b9c9c1" stroke-width=".7" opacity=".45"/></pattern>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="150%"><feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#193d37" flood-opacity=".11"/></filter>
+    <filter id="small-shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#1b3c3f" flood-opacity=".1"/></filter>
+    <linearGradient id="paper" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#fffefa"/><stop offset="1" stop-color="#f0f3ee"/></linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="#e7eee7"/>
+  <rect width="1200" height="750" fill="url(#grid)"/>
+  <path d="M-40 610C160 490 250 600 420 500S685 440 805 310 1120 195 1240 230" fill="none" stroke="#f6f4e9" stroke-width="95" opacity=".9"/>
+  <path d="M120-30C200 170 120 245 320 355S570 530 550 810" fill="none" stroke="#f6f4e9" stroke-width="55" opacity=".65"/>
+  <circle cx="1110" cy="68" r="150" fill="#cbded1" opacity=".55"/>
+  <g filter="url(#shadow)">
+    <rect x="99" y="94" width="1002" height="560" rx="18" fill="url(#paper)" stroke="#cedbd3"/>
+    <path d="M117 94h966a18 18 0 0 1 18 18v45H99v-45a18 18 0 0 1 18-18Z" fill="#233e57"/>
+    <circle cx="128" cy="125" r="4" fill="#afc3ce"/><circle cx="144" cy="125" r="4" fill="#afc3ce" opacity=".65"/><circle cx="160" cy="125" r="4" fill="#afc3ce" opacity=".4"/>
+    <text x="201" y="133" fill="#f8f6ef" font-family="Georgia,serif" font-size="22" letter-spacing="-.6">RouteAI</text>
+    <text x="1046" y="129" fill="#c5d3db" font-family="Arial,sans-serif" font-size="8" letter-spacing="2.2" text-anchor="end">TRAVEL WORKSPACE</text>
+    <line x1="319" y1="157" x2="319" y2="654" stroke="#dbe2dc"/>
+    <text x="133" y="202" fill="#2c6e73" font-family="Arial,sans-serif" font-size="8" letter-spacing="2">YOUR NEXT DAY</text>
+    <rect x="133" y="226" width="151" height="7" rx="3.5" fill="#2c4e5b" opacity=".85"/>
+    <rect x="133" y="245" width="118" height="5" rx="2.5" fill="#a4b7b2"/>
+    <g fill="#f4f5ef" stroke="#dce4dc"><rect x="133" y="280" width="151" height="43" rx="6"/><rect x="133" y="340" width="70" height="43" rx="6"/><rect x="214" y="340" width="70" height="43" rx="6"/><rect x="133" y="405" width="151" height="43" rx="6"/></g>
+    <g fill="#a0b4ac"><rect x="147" y="297" width="66" height="5" rx="2.5"/><rect x="147" y="357" width="32" height="5" rx="2.5"/><rect x="228" y="357" width="32" height="5" rx="2.5"/><rect x="147" y="422" width="84" height="5" rx="2.5"/></g>
+    <rect x="133" y="475" width="46" height="21" rx="4" fill="#e0ede5"/><rect x="186" y="475" width="44" height="21" rx="4" fill="#e0ede5"/><rect x="237" y="475" width="47" height="21" rx="4" fill="#edf0e9"/>
+    <rect x="133" y="534" width="151" height="41" rx="6" fill="#2c6e73"/>
+    <path d="m254 555 8-8m-8 0h8v8" stroke="#f4f5ed" stroke-width="1.4" fill="none"/>
+    <rect x="148" y="552" width="56" height="5" rx="2.5" fill="#e1eeea"/>
+    <text x="133" y="612" fill="#8a9e95" font-family="Arial,sans-serif" font-size="7" letter-spacing="1">PLAN · VERIFY · CONTINUE</text>
+    <rect x="345" y="184" width="729" height="443" rx="9" fill="#e9eee7"/>
+    <clipPath id="map"><rect x="345" y="184" width="729" height="443" rx="9"/></clipPath>
+    <g clip-path="url(#map)">
+      <rect x="345" y="184" width="729" height="443" fill="url(#grid)"/>
+      <path d="M310 440 540 355 590 430 840 320 1120 390" stroke="#faf8ef" stroke-width="43" fill="none"/>
+      <path d="M438 166 482 340 408 531 550 670M683 160 643 288 752 406 663 670" stroke="#faf8ef" stroke-width="29" fill="none"/>
+      <path d="M1050 160C930 290 960 375 866 467S810 625 750 677" stroke="#c4dace" stroke-width="83" fill="none"/>
+      <path d="m444 434 72-108q14-22 41-7l125 70q25 13 42-9l96-132" fill="none" stroke="#365d70" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 8"/>
+      <circle cx="444" cy="434" r="37" fill="#f8f8ef" opacity=".75"/>
+      <circle cx="444" cy="434" r="23" fill="#233e57" stroke="#fffefa" stroke-width="7" filter="url(#small-shadow)"/>
+      <circle cx="575" cy="340" r="23" fill="#2c6e73" stroke="#fffefa" stroke-width="7" filter="url(#small-shadow)"/>
+      <circle cx="721" cy="368" r="23" fill="#a9804e" stroke="#fffefa" stroke-width="7" filter="url(#small-shadow)"/>
+      <g fill="#fffefa" font-family="Arial,sans-serif" font-size="10" text-anchor="middle"><text x="444" y="438">01</text><text x="575" y="344">02</text><text x="721" y="372">03</text></g>
+      <rect x="781" y="217" width="257" height="329" rx="11" fill="#fffefa" stroke="#d7dfd6" filter="url(#small-shadow)"/>
+      <text x="803" y="252" fill="#2c6e73" font-family="Arial,sans-serif" font-size="7" letter-spacing="1.8">A DAY, WELL PLANNED.</text>
+      <rect x="803" y="267" width="135" height="7" rx="3.5" fill="#334f5c"/>
+      <rect x="803" y="286" width="175" height="4" rx="2" fill="#b6c2ba"/>
+      <line x1="803" y1="310" x2="1016" y2="310" stroke="#e4e8df"/>
+      <g fill="#e7efe8"><rect x="803" y="331" width="30" height="30" rx="7"/><rect x="803" y="389" width="30" height="30" rx="7"/><rect x="803" y="447" width="30" height="30" rx="7"/></g>
+      <g fill="#2c6e73" font-family="Arial,sans-serif" font-size="9" text-anchor="middle"><text x="818" y="350">01</text><text x="818" y="408">02</text><text x="818" y="466">03</text></g>
+      <g fill="#7b9489"><rect x="847" y="336" width="111" height="5" rx="2.5"/><rect x="847" y="394" width="87" height="5" rx="2.5"/><rect x="847" y="452" width="101" height="5" rx="2.5"/></g>
+      <g fill="#c1cdc2"><rect x="847" y="352" width="145" height="3" rx="1.5"/><rect x="847" y="410" width="145" height="3" rx="1.5"/><rect x="847" y="468" width="145" height="3" rx="1.5"/></g>
+      <rect x="803" y="499" width="213" height="25" rx="5" fill="#e4eee7"/>
+      <path d="m817 511 3 3 6-7" fill="none" stroke="#487565" stroke-width="1.5"/>
+      <text x="839" y="515" fill="#4d7667" font-family="Arial,sans-serif" font-size="7" letter-spacing="1">READY FOR REVIEW</text>
+      <rect x="370" y="574" width="156" height="25" rx="4" fill="#f8f8f0" stroke="#d3ded3"/>
+      <circle cx="384" cy="586" r="3" fill="#a9804e"/>
+      <text x="396" y="589" fill="#6c8278" font-family="Arial,sans-serif" font-size="6.5" letter-spacing="1">ILLUSTRATIVE WORKSPACE</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,391 @@
+{
+  "brief": {
+    "city": "武汉",
+    "date": "2026-11-01",
+    "start_time": "09:00",
+    "end_time": "18:00",
+    "budget_max": 300.0,
+    "max_pois": 3,
+    "preferences": [
+      "人文历史",
+      "城市漫步"
+    ],
+    "transportation": "walking",
+    "notes": ""
+  },
+  "draft": {
+    "stops": [
+      {
+        "poi_id": "wh-yellow-crane",
+        "visit_minutes": 90,
+        "reason": "历史文化与城市漫步偏好"
+      },
+      {
+        "poi_id": "wh-hubu",
+        "visit_minutes": 60,
+        "reason": "历史文化与城市漫步偏好"
+      },
+      {
+        "poi_id": "wh-tanhualin",
+        "visit_minutes": 90,
+        "reason": "历史文化与城市漫步偏好"
+      }
+    ],
+    "summary": "武汉历史文化一日示例。",
+    "caveats": [
+      "离线固定示例；票价、开放时间和交通均需在真实出行前核实。"
+    ]
+  },
+  "pois": [
+    {
+      "id": "wh-yellow-crane",
+      "name": "黄鹤楼",
+      "address": "武汉市（离线示例）",
+      "longitude": 114.3063,
+      "latitude": 30.5433,
+      "visit_minutes": 90,
+      "estimated_ticket_cost": 70.0,
+      "source": "fixture",
+      "source_url": "",
+      "fetched_at": "2026-10-26T00:00:00+00:00"
+    },
+    {
+      "id": "wh-hubu",
+      "name": "户部巷",
+      "address": "武汉市（离线示例）",
+      "longitude": 114.2953,
+      "latitude": 30.5462,
+      "visit_minutes": 60,
+      "estimated_ticket_cost": 0.0,
+      "source": "fixture",
+      "source_url": "",
+      "fetched_at": "2026-10-26T00:00:00+00:00"
+    },
+    {
+      "id": "wh-tanhualin",
+      "name": "昙华林",
+      "address": "武汉市（离线示例）",
+      "longitude": 114.306,
+      "latitude": 30.555,
+      "visit_minutes": 90,
+      "estimated_ticket_cost": 0.0,
+      "source": "fixture",
+      "source_url": "",
+      "fetched_at": "2026-10-26T00:00:00+00:00"
+    },
+    {
+      "id": "wh-museum",
+      "name": "湖北省博物馆",
+      "address": "武汉市（离线示例）",
+      "longitude": 114.3654,
+      "latitude": 30.5617,
+      "visit_minutes": 90,
+      "estimated_ticket_cost": 0.0,
+      "source": "fixture",
+      "source_url": "",
+      "fetched_at": "2026-10-26T00:00:00+00:00"
+    },
+    {
+      "id": "wh-eastlake",
+      "name": "东湖听涛景区",
+      "address": "武汉市（离线示例）",
+      "longitude": 114.3747,
+      "latitude": 30.5714,
+      "visit_minutes": 90,
+      "estimated_ticket_cost": 0.0,
+      "source": "fixture",
+      "source_url": "",
+      "fetched_at": "2026-10-26T00:00:00+00:00"
+    },
+    {
+      "id": "wh-lake-park",
+      "name": "东湖梨园",
+      "address": "武汉市（离线示例）",
+      "longitude": 114.3695,
+      "latitude": 30.5798,
+      "visit_minutes": 60,
+      "estimated_ticket_cost": 0.0,
+      "source": "fixture",
+      "source_url": "",
+      "fetched_at": "2026-10-26T00:00:00+00:00"
+    }
+  ],
+  "route": {
+    "segments": [
+      {
+        "from_id": "wh-yellow-crane",
+        "to_id": "wh-hubu",
+        "duration_minutes": 20,
+        "distance_meters": 1432,
+        "cost_estimate": 0.0,
+        "source": "fixture"
+      },
+      {
+        "from_id": "wh-hubu",
+        "to_id": "wh-tanhualin",
+        "duration_minutes": 25,
+        "distance_meters": 1842,
+        "cost_estimate": 0.0,
+        "source": "fixture"
+      }
+    ],
+    "warnings": [
+      "离线演示路线由固定坐标估算，未调用高德，不代表真实交通。"
+    ]
+  },
+  "validation": {
+    "feasible": true,
+    "violations": [],
+    "warnings": [
+      "离线演示路线由固定坐标估算，未调用高德，不代表真实交通。",
+      "预留 60 分钟用餐/休息及 60 元餐费；门票和交通为估算，未含起终点接驳，未核实开放时间",
+      "当前为离线示例数据，不代表实时景点、票价或路况"
+    ],
+    "duration_minutes": 345,
+    "cost_estimate": 130.0
+  },
+  "research_results": [
+    {
+      "task_id": "0",
+      "pois": [
+        {
+          "id": "wh-yellow-crane",
+          "name": "黄鹤楼",
+          "address": "武汉市（离线示例）",
+          "longitude": 114.3063,
+          "latitude": 30.5433,
+          "visit_minutes": 90,
+          "estimated_ticket_cost": 70.0,
+          "source": "fixture",
+          "source_url": "",
+          "fetched_at": "2026-10-26T00:00:00+00:00"
+        },
+        {
+          "id": "wh-hubu",
+          "name": "户部巷",
+          "address": "武汉市（离线示例）",
+          "longitude": 114.2953,
+          "latitude": 30.5462,
+          "visit_minutes": 60,
+          "estimated_ticket_cost": 0.0,
+          "source": "fixture",
+          "source_url": "",
+          "fetched_at": "2026-10-26T00:00:00+00:00"
+        },
+        {
+          "id": "wh-tanhualin",
+          "name": "昙华林",
+          "address": "武汉市（离线示例）",
+          "longitude": 114.306,
+          "latitude": 30.555,
+          "visit_minutes": 90,
+          "estimated_ticket_cost": 0.0,
+          "source": "fixture",
+          "source_url": "",
+          "fetched_at": "2026-10-26T00:00:00+00:00"
+        }
+      ],
+      "diagnostics": [
+        "offline_fixture: 坐标、票价与路线均为演示数据，不代表实时信息"
+      ],
+      "tool_calls": 0,
+      "model_calls": 0
+    },
+    {
+      "task_id": "1",
+      "pois": [
+        {
+          "id": "wh-museum",
+          "name": "湖北省博物馆",
+          "address": "武汉市（离线示例）",
+          "longitude": 114.3654,
+          "latitude": 30.5617,
+          "visit_minutes": 90,
+          "estimated_ticket_cost": 0.0,
+          "source": "fixture",
+          "source_url": "",
+          "fetched_at": "2026-10-26T00:00:00+00:00"
+        },
+        {
+          "id": "wh-eastlake",
+          "name": "东湖听涛景区",
+          "address": "武汉市（离线示例）",
+          "longitude": 114.3747,
+          "latitude": 30.5714,
+          "visit_minutes": 90,
+          "estimated_ticket_cost": 0.0,
+          "source": "fixture",
+          "source_url": "",
+          "fetched_at": "2026-10-26T00:00:00+00:00"
+        },
+        {
+          "id": "wh-lake-park",
+          "name": "东湖梨园",
+          "address": "武汉市（离线示例）",
+          "longitude": 114.3695,
+          "latitude": 30.5798,
+          "visit_minutes": 60,
+          "estimated_ticket_cost": 0.0,
+          "source": "fixture",
+          "source_url": "",
+          "fetched_at": "2026-10-26T00:00:00+00:00"
+        }
+      ],
+      "diagnostics": [
+        "offline_fixture: 坐标、票价与路线均为演示数据，不代表实时信息"
+      ],
+      "tool_calls": 0,
+      "model_calls": 0
+    }
+  ],
+  "mode": "demo",
+  "status": "completed",
+  "recorded_at": "2026-10-26T04:10:11.797686+00:00",
+  "disclosure": "真实 LangGraph 的离线固定数据执行记录；仅作回放，不代表实时模型、地图或票价。",
+  "events": [
+    {
+      "type": "node_start",
+      "node": "clarify",
+      "message": "开始 clarify",
+      "seq": 1
+    },
+    {
+      "type": "node_end",
+      "node": "clarify",
+      "message": "完成 clarify",
+      "data": {
+        "elapsed_seconds": 0.0
+      },
+      "seq": 2
+    },
+    {
+      "type": "node_start",
+      "node": "research_plan",
+      "message": "开始 research_plan",
+      "seq": 3
+    },
+    {
+      "type": "node_end",
+      "node": "research_plan",
+      "message": "完成 research_plan",
+      "data": {
+        "elapsed_seconds": 0.0
+      },
+      "seq": 4
+    },
+    {
+      "type": "node_start",
+      "node": "research:0",
+      "message": "开始 research:0",
+      "seq": 5
+    },
+    {
+      "type": "node_end",
+      "node": "research:0",
+      "message": "完成 research:0",
+      "data": {
+        "elapsed_seconds": 0.0
+      },
+      "seq": 6
+    },
+    {
+      "type": "node_start",
+      "node": "research:1",
+      "message": "开始 research:1",
+      "seq": 7
+    },
+    {
+      "type": "node_end",
+      "node": "research:1",
+      "message": "完成 research:1",
+      "data": {
+        "elapsed_seconds": 0.0
+      },
+      "seq": 8
+    },
+    {
+      "type": "node_start",
+      "node": "gather",
+      "message": "开始 gather",
+      "seq": 9
+    },
+    {
+      "type": "node_end",
+      "node": "gather",
+      "message": "完成 gather",
+      "data": {
+        "elapsed_seconds": 0.0
+      },
+      "seq": 10
+    },
+    {
+      "type": "node_start",
+      "node": "propose",
+      "message": "开始 propose",
+      "seq": 11
+    },
+    {
+      "type": "node_end",
+      "node": "propose",
+      "message": "完成 propose",
+      "data": {
+        "elapsed_seconds": 0.0
+      },
+      "seq": 12
+    },
+    {
+      "type": "node_start",
+      "node": "validate",
+      "message": "开始 validate",
+      "seq": 13
+    },
+    {
+      "type": "node_end",
+      "node": "validate",
+      "message": "完成 validate",
+      "data": {
+        "elapsed_seconds": 0.0
+      },
+      "seq": 14
+    },
+    {
+      "type": "node_start",
+      "node": "review",
+      "message": "开始 review",
+      "seq": 15
+    },
+    {
+      "type": "interrupt",
+      "node": "review",
+      "message": "记录中的行程等待用户审核",
+      "seq": 16
+    },
+    {
+      "type": "node_start",
+      "node": "review",
+      "message": "开始 review",
+      "seq": 17
+    },
+    {
+      "type": "node_end",
+      "node": "review",
+      "message": "完成 review",
+      "data": {
+        "elapsed_seconds": 0.0
+      },
+      "seq": 18
+    },
+    {
+      "type": "complete",
+      "node": "complete",
+      "message": "离线示例已确认完成",
+      "seq": 19
+    }
+  ],
+  "metrics": {
+    "model_calls": 0,
+    "tool_calls": 0,
+    "proposal_attempts": 1,
+    "elapsed_seconds": 0.009
+  }
+}
