@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" fill="none">
+  <title>星匣游戏创作作品集视觉示意</title>
+  <defs>
+    <linearGradient id="sky" x1="130" y1="50" x2="1050" y2="750" gradientUnits="userSpaceOnUse"><stop stop-color="#EEE8F2"/><stop offset="1" stop-color="#DDE9E2"/></linearGradient>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" stroke="#7A8D85" stroke-opacity=".12"/></pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dy="15" stdDeviation="20" flood-color="#4A5966" flood-opacity=".12"/></filter>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1200v750H0z"/>
+  <path fill="url(#grid)" d="M0 0h1200v750H0z"/>
+  <circle cx="1080" cy="85" r="240" fill="#E0D6E9" fill-opacity=".5"/>
+  <circle cx="70" cy="725" r="230" fill="#CFDFD5" fill-opacity=".6"/>
+  <g filter="url(#shadow)">
+    <rect x="120" y="100" width="960" height="550" rx="26" fill="#FAF9F5"/>
+    <path d="M146 100h908a26 26 0 0 1 26 26v48H120v-48a26 26 0 0 1 26-26Z" fill="#344B4D"/>
+    <circle cx="151" cy="137" r="5" fill="#8EAEB0"/><circle cx="170" cy="137" r="5" fill="#8EAEB0"/><circle cx="189" cy="137" r="5" fill="#8EAEB0"/>
+    <text x="225" y="147" fill="#FAF9F5" font-family="Georgia,serif" font-size="30">A little world to play.</text>
+    <text x="880" y="143" fill="#BCD1CC" font-family="Arial,sans-serif" font-size="12" letter-spacing="3">GAME CREATIONS</text>
+    <rect x="157" y="210" width="570" height="398" rx="16" fill="#E8EEDA"/>
+    <path d="M157 480c100-130 180 95 315-30s154-108 255-18v160a16 16 0 0 1-16 16H173a16 16 0 0 1-16-16Z" fill="#C9DEDC"/>
+    <path d="M157 520c130-80 177 76 308-3s182-60 262-10v85a16 16 0 0 1-16 16H173a16 16 0 0 1-16-16Z" fill="#B0CFD0"/>
+    <path d="M266 325h53v-26h158v26h79v53h53v106h-53v53H319v-27h-53v-79h-26v-53h26Z" fill="#F0D8AA"/>
+    <path d="M292 325h27v-26h158v26h53v53h53v80h-53v26H319v-27h-53v-53h26Z" fill="#94B19A"/>
+    <path d="M340 460h37v-36h54v-54h83" stroke="#F6ECCF" stroke-width="17" stroke-linecap="square"/>
+    <rect x="329" y="316" width="44" height="60" fill="#526E5B"/><path d="M307 323h88l-44-66Z" fill="#698C73"/>
+    <rect x="503" y="347" width="41" height="56" fill="#526E5B"/><path d="M484 353h80l-40-61Z" fill="#6B8F78"/>
+    <path d="M402 414v-30h32v30h-8v28h-16v-28Z" fill="#334D50"/>
+    <path d="M407 384v-18h22v18" fill="#D7AA77"/>
+    <path d="M610 253h27M623 240v27M220 551h19M229 542v19" stroke="#8F789C" stroke-width="3"/>
+    <text x="188" y="245" fill="#58735F" font-family="Arial,sans-serif" font-size="11" letter-spacing="3">EXPLORE A NEW WORLD</text>
+    <g transform="translate(766 210)">
+      <text y="29" fill="#344B4D" font-family="Georgia,serif" font-size="30">Make. Play. Repeat.</text>
+      <text y="61" fill="#7D8D86" font-family="Arial,sans-serif" font-size="11" letter-spacing="2">SMALL GAMES, NEW POSSIBILITIES</text>
+      <path d="M70 116h99c29 0 50 27 56 57l15 70c7 32-23 51-47 30l-35-33H82l-35 33c-24 21-54 2-47-30l15-70c6-30 26-57 55-57Z" fill="#E6DFED" stroke="#BAAFC5" stroke-width="2" transform="translate(4 0)"/>
+      <path d="M74 163v48M50 187h48" stroke="#586C68" stroke-width="13" stroke-linecap="round"/>
+      <circle cx="172" cy="173" r="10" fill="#BA9A75"/><circle cx="198" cy="198" r="10" fill="#8E7DA0"/>
+      <rect y="335" width="250" height="1" fill="#DCE2DA"/>
+      <text y="364" fill="#61756F" font-family="Arial,sans-serif" font-size="11" letter-spacing="2">IDEA → INTERACTION → EXPERIENCE</text>
+    </g>
+  </g>
+</svg>

@@ -14,3 +14,9 @@ html[data-theme=dark]{color-scheme:dark;--bg:#17201f;--surface:#202c2b;--text:#e
 
 /* Keep the opening compact enough for the selected work to enter the first view. */
 @media(min-width:761px){.index-hero{padding:64px 0 48px}.index-hero h1{font-size:clamp(2.7rem,5.8vw,4.8rem)}}
+
+/* Additional work shares the same editorial rhythm as the featured project. */
+.work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;margin-bottom:72px;padding-top:35px;border-top:1px solid var(--line)}.work-card{min-width:0;scroll-margin-top:100px}.work-visual{display:block;position:relative;aspect-ratio:16/10;overflow:hidden;border-radius:10px;background:var(--cover)}.work-visual img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}.work-visual:hover img{transform:scale(1.025)}.doopoo-visual{background:#fafafa}.work-card-copy{padding-top:28px;display:flex;flex-direction:column;align-items:flex-start}.work-card-copy>.eyebrow{color:var(--gold)}.work-card-copy h2{font-size:clamp(1.9rem,3vw,2.6rem);margin:10px 0 9px}.work-subtitle{font:500 1.06rem/1.7 var(--serif);margin-bottom:16px}.work-description{font-size:.86rem;line-height:1.95;color:var(--muted);max-width:510px;margin-bottom:22px}.work-card-copy .tag-row{margin-bottom:25px}.work-card-copy .text-link{margin-top:auto}
+@media(max-width:760px){.work-grid{grid-template-columns:1fr;gap:46px;padding-top:28px;margin-bottom:50px}.work-card-copy{padding-top:23px}.work-card-copy h2{font-size:2rem}.work-description{font-size:.87rem}.work-visual{border-radius:7px}}
+@media(prefers-reduced-motion:reduce){.work-visual img{transition:none}.work-visual:hover img{transform:none}}
+.work-card{display:flex;flex-direction:column}.work-visual{flex:none}.work-card-copy{flex:1}
